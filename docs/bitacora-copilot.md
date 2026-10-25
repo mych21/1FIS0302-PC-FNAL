@@ -72,3 +72,9 @@ Registro cronológico de las solicitudes y del trabajo realizado para este proye
 - Se añadió `.github/workflows/agente-onboarding.yml`, ejecutable solo mediante `workflow_dispatch`, con permisos `contents: write` e `issues: write`; crea un issue con los temas y URLs detectados, y guarda los nuevos hashes.
 - Se actualizó la guía del agente para recibir del issue los temas afectados, y el README para documentar el workflow y el comando de inicialización.
 - A solicitud del usuario, el workflow se ajustó para no modificar ni hacer commit de `agente/fuentes.json` y se retiró `contents: write`. Ahora el issue incluye los hashes detectados y el agente actualizador guarda los hashes de los temas afectados en el mismo pull request que las diapositivas y preguntas.
+- Se registró el ajuste en el commit `c5c223a` (`fix: evitar cambios de fuentes desde workflow`) y se abrió el pull request [#4](https://github.com/mych21/1FIS0302-PC-FNAL/pull/4), que se fusionó en `main` el 25 de octubre de 2026 a las 01:50:45 UTC.
+
+### Registro completo de la bitácora
+
+- El usuario pidió registrar toda la bitácora de interacciones en este archivo; se mantiene aquí el historial cronológico de requisitos, cambios, validaciones, commits y revisiones de pull request.
+- El usuario aclaró que la actualización del contenido se realiza con el agente de Copilot en GitHub, desde la pestaña **Agents**, disponible de forma limitada en Copilot Free. Se corrigió la descripción correspondiente en `README.md`.
