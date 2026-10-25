@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
   issues: write
 
 jobs:
@@ -43,28 +42,14 @@ jobs:
             "Actualiza únicamente estos temas siguiendo `README.md` y las instrucciones del agente de onboarding.",
             "",
             ...topics.flatMap((topic) => [
-              `- **${topic.titulo}** (id: \`${topic.id}\`): ${topic.url}`
+              `- **${topic.titulo}** (id: \`${topic.id}\`): ${topic.url}`,
+              `  - SHA-256 detectado: \`${topic.hash}\``
             ]),
             "",
-            "Después de actualizar el contenido, valida el onboarding con `node agente/construir.js` y propón los cambios mediante un pull request para revisión humana."
+            "Actualiza únicamente los temas indicados. Guarda cada hash SHA-256 detectado en el campo `hash` correspondiente de `agente/fuentes.json`, junto con los cambios de diapositivas y preguntas, y valida con `node agente/construir.js`. Propón todos esos cambios en un único pull request para revisión humana."
           ];
           fs.writeFileSync(process.env.ISSUE_BODY_FILE, `${lines.join("\n")}\n`);
           NODE
           gh issue create \
             --title "Actualizar temas del onboarding por cambios en el Handbook" \
             --body-file "$ISSUE_BODY_FILE"
-
-      - name: Guardar los hashes detectados
-        if: steps.detector.outputs.changed == 'true'
-        env:
-          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add agente/fuentes.json
-          if git diff --cached --quiet; then
-            echo "No hay hashes nuevos para guardar."
-            exit 0
-          fi
-          git commit -m "chore: guardar hashes de fuentes del onboarding"
-          git push origin "HEAD:${DEFAULT_BRANCH}"

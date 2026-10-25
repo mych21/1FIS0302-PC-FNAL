@@ -61,9 +61,9 @@ El generador valida los datos y crea el HTML autocontenido de la versión config
 
 ## Cómo funciona el agente
 
-El workflow de detección se ejecuta solo a demanda desde **Actions**. Ejecuta `node agente/actualizar.js`, que consulta las páginas registradas en `agente/fuentes.json`, compara sus hashes SHA-256 y escribe los temas afectados en un archivo temporal de salida. Si detecta cambios, abre un issue con los temas y sus URL, y guarda los hashes actualizados en `agente/fuentes.json`. Si no hay cambios, no abre un issue.
+El workflow de detección se ejecuta solo a demanda desde **Actions**. Ejecuta `node agente/actualizar.js`, que consulta las páginas registradas en `agente/fuentes.json`, compara sus hashes SHA-256 y escribe los temas afectados en un archivo temporal de salida. Si detecta cambios, abre un issue con los temas, sus URL y los hashes SHA-256 detectados. El workflow no modifica ni hace commit de archivos del repositorio; si no hay cambios, no abre un issue.
 
-Después, la actualización del contenido se realiza con GitHub Copilot en modo agente desde VS Code, siguiendo este README y usando únicamente las fuentes autorizadas. La versión generada se propone en un pull request que debe revisar una persona antes de publicarse. Este proyecto usa Copilot Free; por esa razón, la actualización se hace con Copilot en VS Code y no con el agente de GitHub.
+Después, la actualización del contenido se realiza con GitHub Copilot en modo agente desde VS Code, siguiendo este README y usando únicamente las fuentes autorizadas. El agente actualizador guarda los hashes de los temas afectados en `agente/fuentes.json`, junto con los cambios de `datos/slides.json` y `datos/quiz.json`, y propone todo en un mismo pull request que debe revisar una persona antes de publicarse. Este proyecto usa Copilot Free; por esa razón, la actualización se hace con Copilot en VS Code y no con el agente de GitHub.
 
 Para inicializar los hashes manualmente, ejecuta `node agente/actualizar.js --inicializar`. Esta opción solo guarda los hashes actuales y no genera una versión.
 
@@ -136,8 +136,8 @@ Cada diapositiva incluirá:
 ### Actualización de fuentes
 
 - El agente personalizado `.github/agents/actualizador-onboarding.agent.md` procesa el issue del workflow y consulta solo las URL de los temas indicados que coincidan con `agente/fuentes.json`.
-- El workflow compara los hashes SHA-256, guarda los hashes nuevos y abre un issue con los temas cambiados y sus URL. Si ninguna página cambió, no abre un issue.
-- El agente actualiza únicamente las diapositivas y preguntas de los temas indicados en el issue; no modifica los hashes, que ya guarda el workflow.
+- El workflow compara los hashes SHA-256 y abre un issue con los temas cambiados, sus URL y los hashes detectados. No modifica ni hace commit de archivos del repositorio; si ninguna página cambió, no abre un issue.
+- El agente actualiza únicamente las diapositivas y preguntas de los temas indicados en el issue y guarda sus hashes nuevos en `agente/fuentes.json`, todo en el mismo pull request.
 - Si la validación de `node agente/construir.js` falla, no debe generar ni proponer una versión.
 - Una actualización válida genera la siguiente versión menor y se propone mediante un pull request para revisión humana. No se publica directamente en la rama predeterminada.
 - El generador permite especificar la versión y los temas cambiados mediante `ONBOARDING_VERSION` y `ONBOARDING_CHANGED_TOPICS`; el agente debe pasar ambos valores al ejecutar `node agente/construir.js`.

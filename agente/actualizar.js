@@ -230,11 +230,6 @@ async function main() {
     : path.join(os.tmpdir(), `onboarding-temas-cambiados-${process.pid}.json`);
   atomicWrite(outputFile, `${JSON.stringify(changed, null, 2)}\n`);
 
-  for (const source of sources) {
-    if (changed.some((topic) => topic.id === source.id)) source.hash = latestHashes.get(source.id);
-  }
-  atomicWrite(sourcesFile, `${JSON.stringify(sources, null, 2)}\n`);
-
   console.log(`Cambios detectados en ${changed.length} tema(s). Resultado: ${outputFile}`);
   writeGitHubOutput({
     changed: "true",
