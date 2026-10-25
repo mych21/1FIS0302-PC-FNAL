@@ -3,10 +3,10 @@
     "id": "bienvenida",
     "titulo": "Bienvenida a GitLab",
     "puntos": [
-      "GitLab crea una plataforma que ayuda a los equipos a colaborar y a llevar software útil hasta las personas usuarias.",
-      "Se anima a cada persona del equipo a contribuir y generar impacto más allá de las responsabilidades inmediatas de su puesto.",
+      "La plataforma de GitLab une a equipos y organizaciones para colaborar y crear el software que impulsa su trabajo.",
+      "Puedes aprender a contribuir en GitLab desde tu primera semana, sin importar tu puesto o si eres desarrollador.",
       "Este onboarding reúne ocho temas en una presentación breve; avanza a tu ritmo y comprueba lo aprendido con el quiz final.",
-      "El Handbook es la guía compartida para conocer la cultura de GitLab y sus formas de trabajo."
+      "La cultura combina valores, compañerismo y formas de trabajo que ayudan a las personas a tener impacto."
     ],
     "url": "https://handbook.gitlab.com/handbook/company/culture/",
     "visual": {
@@ -19,10 +19,10 @@
     "id": "mision-vision",
     "titulo": "Misión y visión",
     "puntos": [
-      "La misión actual de GitLab es que cada equipo pueda entregar software confiable a la velocidad de la imaginación.",
-      "La estrategia busca reducir la distancia entre una idea y su entrega a las personas usuarias, manteniendo rapidez y control.",
-      "La plataforma conecta las etapas del ciclo del software: planificar, desarrollar, proteger, desplegar y operar.",
-      "Las personas dirigen el trabajo y aportan criterio; los agentes pueden ayudar a ejecutarlo dentro de controles."
+      "La misión de GitLab es que cada equipo entregue software confiable a la velocidad de la imaginación.",
+      "GitLab busca quitar fricción entre una idea y su llegada a las personas usuarias, sin sacrificar velocidad ni control.",
+      "La plataforma coordina el ciclo de vida del software y conecta planificación, código, revisión, seguridad y entrega.",
+      "Las personas dirigen y aplican criterio; las máquinas pueden construir y ejecutar tareas con controles adecuados."
     ],
     "url": "https://handbook.gitlab.com/handbook/company/mission/",
     "visual": {
@@ -35,10 +35,10 @@
     "id": "valores",
     "titulo": "Valores de GitLab",
     "puntos": [
-      "CREDIT reúne seis valores: colaboración; resultados para clientes; eficiencia; diversidad, inclusión y pertenencia; iteración; y transparencia.",
-      "En la colaboración, ayudar y pedir ayuda importa; quien lleva el trabajo considera las sugerencias y explica sus decisiones.",
-      "La iteración favorece entregar un cambio útil pronto, aprender de la respuesta y ajustar el siguiente paso.",
-      "La transparencia hace visible el contexto para que otras personas puedan comprender y mejorar el trabajo."
+      "CREDIT agrupa colaboración, resultados para clientes, eficiencia, diversidad, inclusión y pertenencia, iteración y transparencia.",
+      "La colaboración implica ofrecer y pedir ayuda, escuchar sugerencias y explicar las decisiones sobre el trabajo.",
+      "Iterar es entregar cambios útiles en pasos pequeños, aprender de los comentarios y corregir el rumbo.",
+      "La transparencia comparte información y contexto; asumir buena intención ayuda a trabajar con respeto."
     ],
     "url": "https://handbook.gitlab.com/handbook/values/",
     "visual": {
@@ -51,10 +51,10 @@
     "id": "trabajo-remoto",
     "titulo": "Trabajo 100 % remoto",
     "puntos": [
-      "GitLab trabaja de forma totalmente remota desde sus inicios: colaborar no requiere estar en una oficina compartida.",
-      "Las personas del equipo viven en distintos lugares y zonas horarias, así que sus jornadas no siempre coinciden.",
-      "Con comunicación asíncrona, cada persona puede leer, responder y avanzar sin conectarse al mismo tiempo que el resto.",
-      "La documentación y las prácticas compartidas ayudan a crear claridad y confianza en un equipo distribuido."
+      "GitLab es una compañía remota desde sus inicios y su equipo colabora sin depender de oficinas compartidas.",
+      "Las personas trabajan desde más de 65 países y pueden tener horarios y contextos culturales distintos.",
+      "El trabajo asíncrono permite avanzar aunque el equipo no esté conectado al mismo tiempo.",
+      "La documentación y las prácticas de trabajo compartidas sostienen la colaboración a distancia."
     ],
     "url": "https://handbook.gitlab.com/handbook/company/culture/all-remote/",
     "visual": {
@@ -67,10 +67,10 @@
     "id": "comunicacion",
     "titulo": "Comunicación: asíncrono y Handbook First",
     "puntos": [
-      "Prefiere documentación, issues y mensajes asíncronos para que el trabajo pueda continuar aunque las personas estén en horarios distintos.",
-      "Con Handbook First, los cambios de procesos se proponen en el Handbook en vez de quedar únicamente en una conversación.",
-      "Los cambios documentados y revisables mantienen una referencia común y accesible para todo el equipo.",
-      "Cuando una conversación en vivo ayude, deja por escrito sus decisiones y enlaza la documentación correspondiente."
+      "Escribe primero la solución o el proceso y después compártelo; no dependas solo de mensajes o reuniones.",
+      "Handbook First busca que el Handbook sea la fuente única y accesible para procesos y políticas de trabajo.",
+      "Los cambios se proponen en la documentación para que el equipo pueda revisarlos y mantener una referencia común.",
+      "Usa Slack o una conversación en vivo para conversar, y registra después las decisiones importantes en el Handbook."
     ],
     "url": "https://handbook.gitlab.com/handbook/company/culture/all-remote/handbook-first/",
     "visual": {
@@ -83,10 +83,10 @@
     "id": "onboarding-buddy",
     "titulo": "Tu onboarding y tu buddy",
     "puntos": [
-      "Tu incorporación combina tareas organizativas y técnicas que se registran en un issue de onboarding.",
-      "El buddy es una persona del equipo que te recibe y te ayuda a orientarte; el manager organiza esa asignación.",
-      "Puede revisar tu avance, recomendar páginas del Handbook y conectarte con personas expertas si necesitas ayuda.",
-      "Mantén el contacto durante las primeras semanas y consulta tus dudas sobre las tareas o herramientas."
+      "Tu buddy es una persona asignada para darte la bienvenida y acompañarte mientras te incorporas al equipo.",
+      "Puede conversar contigo, revisar el avance de tu issue y recomendar páginas útiles del Handbook.",
+      "Si necesitas ayuda especializada, el buddy puede conectarte con personas expertas en el tema.",
+      "Acuerden cómo mantenerse en contacto; los seguimientos regulares ayudan a que te sientas acompañado."
     ],
     "url": "https://handbook.gitlab.com/handbook/people-group/general-onboarding/onboarding-buddies/",
     "visual": {
@@ -99,10 +99,10 @@
     "id": "seguridad-herramientas",
     "titulo": "Seguridad y uso aceptable de herramientas",
     "puntos": [
-      "Los recursos administrados por GitLab están destinados al trabajo; el uso personal permitido sigue sujeto a las reglas aplicables.",
-      "Protege los dispositivos y trata cada dato según su clasificación y los requisitos de seguridad correspondientes.",
-      "Los controles de seguridad requeridos deben mantenerse activos; cualquier excepción necesita aprobación de seguridad.",
-      "Nunca compartas credenciales y solicita autorización antes de usar integraciones de Google Workspace o extensiones de Chrome."
+      "Los recursos de GitLab se proporcionan para el trabajo; el uso personal limitado debe respetar las reglas aplicables.",
+      "Maneja la información según su clasificación y protege los equipos y datos de la empresa y sus clientes.",
+      "No desactives controles de seguridad: una excepción requiere aprobación de seguridad.",
+      "No compartas tus credenciales y utiliza únicamente integraciones y extensiones autorizadas."
     ],
     "url": "https://handbook.gitlab.com/handbook/people-group/acceptable-use-policy/",
     "visual": {
@@ -115,10 +115,10 @@
     "id": "primera-semana",
     "titulo": "Tu primera semana: empieza paso a paso",
     "puntos": [
-      "La incorporación es gradual: no se espera que domines tu puesto desde el primer día.",
-      "Durante las primeras semanas, avanza por las tareas de tu issue de onboarding y aprende a tu ritmo, sin presión por contribuir mucho al principio.",
-      "La formación organizativa, técnica y social te ayuda a comprender la empresa, las herramientas y las relaciones del equipo.",
-      "Usa el Handbook como referencia, configura tus herramientas y pide orientación a tu buddy cuando la necesites."
+      "La incorporación remota dura al menos dos semanas completas; no se espera que domines el puesto desde el primer día.",
+      "Durante las dos primeras semanas, sigue el issue de onboarding y participa sin presión por contribuir mucho.",
+      "La tercera semana se dedica al onboarding y la formación específicos de tu equipo.",
+      "El proceso es autoguiado y asíncrono: consulta el Handbook y pide apoyo a tu buddy cuando lo necesites."
     ],
     "url": "https://handbook.gitlab.com/handbook/company/culture/all-remote/onboarding/",
     "visual": {
