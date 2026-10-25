@@ -15,15 +15,15 @@
   {
     "id": "bienvenida-02",
     "tema": "bienvenida",
-    "pregunta": "¿Cómo puede aportar impacto una persona del equipo?",
+    "pregunta": "¿Cuándo puede empezar una persona, sea cual sea su puesto, a contribuir en GitLab?",
     "opciones": [
       "Solo los managers pueden contribuir fuera de su puesto",
-      "Cada persona puede generar impacto más allá de su descripción de puesto",
+      "Desde la primera semana, sin importar el puesto",
       "Las contribuciones se limitan al equipo de producto",
       "Solo se contribuye durante la primera semana"
     ],
     "indiceCorrecta": 1,
-    "explicacion": "La diapositiva indica que la cultura anima a cada persona a contribuir más allá de su descripción de puesto."
+    "explicacion": "La diapositiva explica que desde la primera semana cualquier persona puede aprender a contribuir, sin importar su puesto."
   },
   {
     "id": "bienvenida-03",
@@ -101,12 +101,12 @@
       "Solo quienes trabajan en una oficina"
     ],
     "indiceCorrecta": 1,
-    "explicacion": "La estrategia prepara la plataforma para que personas y agentes de IA trabajen juntos de forma segura."
+    "explicacion": "La diapositiva dice que las personas dirigen y las máquinas pueden construir y ejecutar tareas con controles adecuados."
   },
   {
     "id": "valores-01",
     "tema": "valores",
-    "pregunta": "¿Qué idea resume el acrónimo CREDIT?",
+    "pregunta": "¿Qué valores agrupa CREDIT?",
     "opciones": [
       "Cinco herramientas para reuniones",
       "Un plan de incorporación",
@@ -114,7 +114,7 @@
       "Un programa de seguridad"
     ],
     "indiceCorrecta": 2,
-    "explicacion": "CREDIT es la forma de recordar los seis valores de GitLab."
+    "explicacion": "CREDIT reúne colaboración, resultados para clientes, eficiencia, diversidad e inclusión, iteración y transparencia."
   },
   {
     "id": "valores-02",
@@ -197,15 +197,15 @@
   {
     "id": "trabajo-remoto-04",
     "tema": "trabajo-remoto",
-    "pregunta": "¿Cómo se distribuye geográficamente el equipo de GitLab?",
+    "pregunta": "¿Desde cuántos países trabaja el equipo remoto de GitLab, según la diapositiva?",
     "opciones": [
       "Está concentrado en un único país",
       "Depende de oficinas para colaborar",
       "Trabaja exclusivamente en horarios idénticos",
-      "Está distribuido por distintos países y zonas horarias"
+      "Desde más de 65 países"
     ],
     "indiceCorrecta": 3,
-    "explicacion": "La diapositiva describe un equipo distribuido por muchos países y zonas horarias."
+    "explicacion": "La diapositiva indica que las personas trabajan desde más de 65 países y pueden tener horarios distintos."
   },
   {
     "id": "comunicacion-01",
@@ -236,7 +236,7 @@
   {
     "id": "comunicacion-03",
     "tema": "comunicacion",
-    "pregunta": "¿Qué aporta documentar cambios en el Handbook?",
+    "pregunta": "¿Qué función cumple el Handbook en el enfoque Handbook First?",
     "opciones": [
       "Para limitar el acceso a la información",
       "Para reemplazar toda conversación con una reunión",
@@ -244,7 +244,7 @@
       "Para mantener varias copias independientes"
     ],
     "indiceCorrecta": 2,
-    "explicacion": "El Handbook proporciona una referencia compartida y actualizada."
+    "explicacion": "Handbook First usa el Handbook como fuente única y accesible para procesos y políticas."
   },
   {
     "id": "comunicacion-04",
@@ -262,15 +262,15 @@
   {
     "id": "onboarding-buddy-01",
     "tema": "onboarding-buddy",
-    "pregunta": "¿Quién organiza la asignación de tu buddy?",
+    "pregunta": "¿Cuál es el propósito de asignarte un buddy?",
     "opciones": [
-      "El manager",
+      "Darte la bienvenida y acompañarte durante la incorporación",
       "La persona recién contratada",
       "El equipo de producto",
       "El servicio de IT"
     ],
     "indiceCorrecta": 0,
-    "explicacion": "La diapositiva indica que el manager asigna el buddy."
+    "explicacion": "La diapositiva explica que el buddy te da la bienvenida y te acompaña durante la incorporación."
   },
   {
     "id": "onboarding-buddy-02",
@@ -353,28 +353,28 @@
   {
     "id": "seguridad-herramientas-04",
     "tema": "seguridad-herramientas",
-    "pregunta": "¿Qué conducta incumple la política de uso aceptable?",
+    "pregunta": "¿Qué práctica sobre credenciales y software es correcta?",
     "opciones": [
       "Solicitar aprobación para usar software nuevo",
-      "Compartir credenciales o usar extensiones no autorizadas",
+      "No compartir credenciales y utilizar solo software autorizado",
       "Usar los recursos administrados para trabajar",
       "Manejar los datos según su clasificación"
     ],
     "indiceCorrecta": 1,
-    "explicacion": "La política prohíbe compartir credenciales y restringe las integraciones de Google Workspace y extensiones de Chrome no autorizadas."
+    "explicacion": "La diapositiva indica que no se deben compartir credenciales y que solo se deben usar integraciones y extensiones autorizadas."
   },
   {
     "id": "primera-semana-01",
     "tema": "primera-semana",
-    "pregunta": "¿Qué nivel de dominio se espera el primer día?",
+    "pregunta": "¿Cuánto dura como mínimo la incorporación remota según la diapositiva?",
     "opciones": [
       "Dominar todas las responsabilidades inmediatamente",
       "Completar el onboarding en una sola llamada",
-      "No se espera dominar el puesto desde el primer día",
+      "Al menos dos semanas completas",
       "Evitar aprender hasta la tercera semana"
     ],
     "indiceCorrecta": 2,
-    "explicacion": "La diapositiva aclara que no se espera dominar el puesto desde el primer día."
+    "explicacion": "La diapositiva indica que la incorporación remota dura al menos dos semanas completas."
   },
   {
     "id": "primera-semana-02",
@@ -405,14 +405,14 @@
   {
     "id": "primera-semana-04",
     "tema": "primera-semana",
-    "pregunta": "¿Qué presión existe para contribuir mucho durante los primeros días?",
+    "pregunta": "¿A qué se dedica la tercera semana de onboarding?",
     "opciones": [
-      "No participar hasta terminar el primer mes",
-      "Contribuir mucho desde el primer día",
+      "A la formación específica del equipo",
+      "A completar todo el onboarding en una reunión",
       "Trabajar sin conocer al equipo",
       "Puedes participar, sin presión por contribuir mucho al principio"
     ],
     "indiceCorrecta": 3,
-    "explicacion": "La diapositiva permite participar al inicio, pero sin presión por contribuir mucho."
+    "explicacion": "La diapositiva señala que la tercera semana se dedica al onboarding y la formación específicos del equipo."
   }
 ]
