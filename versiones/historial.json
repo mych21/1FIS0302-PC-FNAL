@@ -27,6 +27,20 @@
         "seguridad-herramientas",
         "primera-semana"
       ]
+    },
+    {
+      "version": "1.2.0",
+      "fecha": "2026-10-24",
+      "temasCambiados": [
+        "bienvenida",
+        "mision-vision",
+        "valores",
+        "trabajo-remoto",
+        "comunicacion",
+        "onboarding-buddy",
+        "seguridad-herramientas",
+        "primera-semana"
+      ]
     }
   ]
 }

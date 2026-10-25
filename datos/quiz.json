@@ -2,7 +2,7 @@
   {
     "id": "bienvenida-01",
     "tema": "bienvenida",
-    "pregunta": "¿Qué facilita la plataforma de GitLab según la diapositiva?",
+    "pregunta": "¿Para qué sirve la plataforma que desarrolla GitLab?",
     "opciones": [
       "La colaboración de equipos para entregar software",
       "La administración de oficinas locales",
@@ -15,7 +15,7 @@
   {
     "id": "bienvenida-02",
     "tema": "bienvenida",
-    "pregunta": "¿Qué actitud hacia la contribución describe la cultura de GitLab?",
+    "pregunta": "¿Cómo puede aportar impacto una persona del equipo?",
     "opciones": [
       "Solo los managers pueden contribuir fuera de su puesto",
       "Cada persona puede generar impacto más allá de su descripción de puesto",
@@ -28,7 +28,7 @@
   {
     "id": "bienvenida-03",
     "tema": "bienvenida",
-    "pregunta": "¿Qué actividad cierra este onboarding?",
+    "pregunta": "¿Qué actividad permite comprobar lo aprendido al terminar el recorrido?",
     "opciones": [
       "Una reunión presencial",
       "Una evaluación anual",
@@ -41,7 +41,7 @@
   {
     "id": "bienvenida-04",
     "tema": "bienvenida",
-    "pregunta": "¿Dónde se recomienda profundizar en cómo funciona la empresa?",
+    "pregunta": "¿Qué recurso compartido explica cómo se organiza y trabaja GitLab?",
     "opciones": [
       "En un chat privado solamente",
       "En un manual impreso",
@@ -54,7 +54,7 @@
   {
     "id": "mision-vision-01",
     "tema": "mision-vision",
-    "pregunta": "¿Cuál es la misión de GitLab para la era de la IA, según la diapositiva?",
+    "pregunta": "¿Qué busca lograr la misión actual de GitLab?",
     "opciones": [
       "Eliminar la necesidad de equipos de software",
       "Ayudar a cada equipo a entregar software confiable a la velocidad de la imaginación",
@@ -67,7 +67,7 @@
   {
     "id": "mision-vision-02",
     "tema": "mision-vision",
-    "pregunta": "¿Qué fricción busca reducir GitLab?",
+    "pregunta": "¿Qué distancia intenta acortar la estrategia de GitLab?",
     "opciones": [
       "La distancia entre una idea y su llegada a las personas usuarias",
       "La necesidad de aprender continuamente",
@@ -80,7 +80,7 @@
   {
     "id": "mision-vision-03",
     "tema": "mision-vision",
-    "pregunta": "¿Qué busca coordinar la visión de plataforma descrita?",
+    "pregunta": "¿Qué conecta la plataforma de GitLab a lo largo del trabajo de software?",
     "opciones": [
       "Las oficinas y los calendarios",
       "La contratación y las nóminas",
@@ -93,7 +93,7 @@
   {
     "id": "mision-vision-04",
     "tema": "mision-vision",
-    "pregunta": "¿Quiénes deberían poder trabajar juntos de forma segura según la estrategia?",
+    "pregunta": "¿Qué combinación de participantes contempla la estrategia de plataforma?",
     "opciones": [
       "Solo las personas usuarias externas",
       "Personas y agentes de IA",
@@ -106,7 +106,7 @@
   {
     "id": "valores-01",
     "tema": "valores",
-    "pregunta": "¿Qué representa el acrónimo CREDIT en GitLab?",
+    "pregunta": "¿Qué idea resume el acrónimo CREDIT?",
     "opciones": [
       "Cinco herramientas para reuniones",
       "Un plan de incorporación",
@@ -119,7 +119,7 @@
   {
     "id": "valores-02",
     "tema": "valores",
-    "pregunta": "¿Cuál es una conducta que refleja colaboración?",
+    "pregunta": "¿Qué comportamiento demuestra colaboración en GitLab?",
     "opciones": [
       "Ayudar a otras personas y considerar sus sugerencias",
       "Evitar pedir ayuda",
@@ -132,7 +132,7 @@
   {
     "id": "valores-03",
     "tema": "valores",
-    "pregunta": "¿Qué promueve el valor de iteración?",
+    "pregunta": "¿Cómo se aplica el valor de iteración al trabajo?",
     "opciones": [
       "Esperar hasta tener un producto completamente pulido",
       "Evitar modificar el trabajo una vez iniciado",
@@ -145,7 +145,7 @@
   {
     "id": "valores-04",
     "tema": "valores",
-    "pregunta": "¿Qué permite la transparencia?",
+    "pregunta": "¿Qué beneficio aporta hacer visible el contexto del trabajo?",
     "opciones": [
       "Que la información permanezca solo en conversaciones privadas",
       "Compartir información y contexto para que otras personas contribuyan",
@@ -158,7 +158,7 @@
   {
     "id": "trabajo-remoto-01",
     "tema": "trabajo-remoto",
-    "pregunta": "¿Desde cuándo trabaja GitLab de forma remota?",
+    "pregunta": "¿Cuál ha sido el modelo de trabajo de GitLab desde sus inicios?",
     "opciones": [
       "Desde sus inicios",
       "Solo desde que se creó su plataforma",
@@ -171,7 +171,7 @@
   {
     "id": "trabajo-remoto-02",
     "tema": "trabajo-remoto",
-    "pregunta": "¿Qué facilita la comunicación asíncrona en un equipo distribuido?",
+    "pregunta": "¿Qué permite la comunicación asíncrona entre personas distribuidas?",
     "opciones": [
       "Que todas las personas trabajen en la misma oficina",
       "Que el trabajo avance sin coincidir en línea al mismo tiempo",
@@ -184,7 +184,7 @@
   {
     "id": "trabajo-remoto-03",
     "tema": "trabajo-remoto",
-    "pregunta": "¿Qué ayuda a los equipos remotos a colaborar con claridad?",
+    "pregunta": "¿Qué prácticas apoyan una colaboración remota clara?",
     "opciones": [
       "Depender de conversaciones improvisadas",
       "Trabajar solo durante el mismo horario",
@@ -197,7 +197,7 @@
   {
     "id": "trabajo-remoto-04",
     "tema": "trabajo-remoto",
-    "pregunta": "¿Qué característica describe la organización del equipo de GitLab?",
+    "pregunta": "¿Cómo se distribuye geográficamente el equipo de GitLab?",
     "opciones": [
       "Está concentrado en un único país",
       "Depende de oficinas para colaborar",
@@ -210,7 +210,7 @@
   {
     "id": "comunicacion-01",
     "tema": "comunicacion",
-    "pregunta": "¿Qué estilo de comunicación se prioriza para colaborar entre zonas horarias?",
+    "pregunta": "¿Qué estilo de comunicación ayuda a colaborar entre distintas zonas horarias?",
     "opciones": [
       "Asíncrono",
       "Solo llamadas en vivo",
@@ -223,7 +223,7 @@
   {
     "id": "comunicacion-02",
     "tema": "comunicacion",
-    "pregunta": "¿Qué se debe hacer antes de comunicar un cambio de proceso?",
+    "pregunta": "¿Dónde se propone primero un cambio de proceso con el enfoque Handbook First?",
     "opciones": [
       "Anunciarlo solo en una reunión",
       "Proponer actualizar primero la página pertinente del Handbook",
@@ -236,7 +236,7 @@
   {
     "id": "comunicacion-03",
     "tema": "comunicacion",
-    "pregunta": "¿Por qué conviene documentar procesos y cambios en el Handbook?",
+    "pregunta": "¿Qué aporta documentar cambios en el Handbook?",
     "opciones": [
       "Para limitar el acceso a la información",
       "Para reemplazar toda conversación con una reunión",
@@ -249,7 +249,7 @@
   {
     "id": "comunicacion-04",
     "tema": "comunicacion",
-    "pregunta": "¿Qué se recomienda hacer después de una conversación en vivo?",
+    "pregunta": "¿Cómo conservar el contexto útil de una conversación en vivo?",
     "opciones": [
       "Dejar las conclusiones solo en la memoria de quienes asistieron",
       "Evitar compartirlas con el resto del equipo",
@@ -262,7 +262,7 @@
   {
     "id": "onboarding-buddy-01",
     "tema": "onboarding-buddy",
-    "pregunta": "¿Quién asigna el onboarding buddy?",
+    "pregunta": "¿Quién organiza la asignación de tu buddy?",
     "opciones": [
       "El manager",
       "La persona recién contratada",
@@ -275,7 +275,7 @@
   {
     "id": "onboarding-buddy-02",
     "tema": "onboarding-buddy",
-    "pregunta": "¿Cuál es una función del buddy?",
+    "pregunta": "¿Qué papel tiene el buddy durante la incorporación?",
     "opciones": [
       "Aprobar todas las decisiones del nuevo integrante",
       "Orientar y ser una persona de contacto durante la incorporación",
@@ -288,7 +288,7 @@
   {
     "id": "onboarding-buddy-03",
     "tema": "onboarding-buddy",
-    "pregunta": "¿Con qué puede ayudar el buddy?",
+    "pregunta": "¿Qué apoyo puede ofrecerte tu buddy?",
     "opciones": [
       "A eliminar todas las tareas de onboarding",
       "A evitar el uso del Handbook",
@@ -301,7 +301,7 @@
   {
     "id": "onboarding-buddy-04",
     "tema": "onboarding-buddy",
-    "pregunta": "¿Qué hacer si algo del onboarding no está claro?",
+    "pregunta": "¿Qué conviene hacer cuando una tarea o herramienta genera dudas?",
     "opciones": [
       "Esperar hasta terminar todas las tareas",
       "No comentarlo con nadie",
@@ -314,7 +314,7 @@
   {
     "id": "seguridad-herramientas-01",
     "tema": "seguridad-herramientas",
-    "pregunta": "¿Para qué se proporcionan principalmente los recursos administrados por GitLab?",
+    "pregunta": "¿Cuál es el propósito principal de los recursos administrados por GitLab?",
     "opciones": [
       "Para uso personal sin restricciones",
       "Para realizar el trabajo de GitLab, con uso personal limitado sujeto a las reglas aplicables",
@@ -327,7 +327,7 @@
   {
     "id": "seguridad-herramientas-02",
     "tema": "seguridad-herramientas",
-    "pregunta": "¿Cómo deben manejarse los datos de GitLab y de sus clientes?",
+    "pregunta": "¿Qué debe guiar el manejo de los datos de GitLab y sus clientes?",
     "opciones": [
       "Según su clasificación",
       "Copiándolos a cualquier servicio externo",
@@ -340,7 +340,7 @@
   {
     "id": "seguridad-herramientas-03",
     "tema": "seguridad-herramientas",
-    "pregunta": "¿Cuándo se pueden desactivar los controles de seguridad requeridos?",
+    "pregunta": "¿Qué hace falta para exceptuar un control de seguridad requerido?",
     "opciones": [
       "Cuando dificulten el trabajo",
       "Cuando lo solicite cualquier compañero",
@@ -353,7 +353,7 @@
   {
     "id": "seguridad-herramientas-04",
     "tema": "seguridad-herramientas",
-    "pregunta": "¿Cuál de estas prácticas está prohibida por la política de uso aceptable?",
+    "pregunta": "¿Qué conducta incumple la política de uso aceptable?",
     "opciones": [
       "Solicitar aprobación para usar software nuevo",
       "Compartir credenciales o usar extensiones no autorizadas",
@@ -366,7 +366,7 @@
   {
     "id": "primera-semana-01",
     "tema": "primera-semana",
-    "pregunta": "¿Qué expectativa existe sobre el primer día en el puesto?",
+    "pregunta": "¿Qué nivel de dominio se espera el primer día?",
     "opciones": [
       "Dominar todas las responsabilidades inmediatamente",
       "Completar el onboarding en una sola llamada",
@@ -379,7 +379,7 @@
   {
     "id": "primera-semana-02",
     "tema": "primera-semana",
-    "pregunta": "¿Dónde se siguen las tareas de onboarding?",
+    "pregunta": "¿En qué lugar se registran las tareas de incorporación?",
     "opciones": [
       "En un issue asignado",
       "En una libreta personal exclusivamente",
@@ -392,7 +392,7 @@
   {
     "id": "primera-semana-03",
     "tema": "primera-semana",
-    "pregunta": "¿Cuál es la fuente central recomendada para encontrar respuestas?",
+    "pregunta": "¿Qué recurso sirve como referencia central para resolver dudas?",
     "opciones": [
       "Un chat de equipo privado",
       "El Handbook",
@@ -405,7 +405,7 @@
   {
     "id": "primera-semana-04",
     "tema": "primera-semana",
-    "pregunta": "¿Qué se recomienda sobre la contribución al trabajo al inicio?",
+    "pregunta": "¿Qué presión existe para contribuir mucho durante los primeros días?",
     "opciones": [
       "No participar hasta terminar el primer mes",
       "Contribuir mucho desde el primer día",
