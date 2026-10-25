@@ -1,0 +1,130 @@
+[
+  {
+    "id": "bienvenida",
+    "titulo": "Bienvenida a GitLab",
+    "puntos": [
+      "GitLab desarrolla una plataforma para que equipos colaboren durante el ciclo de vida del software y puedan entregar resultados.",
+      "La cultura de GitLab invita a cada integrante a aportar ideas e impacto más allá de las tareas de su puesto.",
+      "Este recorrido resume ocho temas; avanza a tu ritmo, consulta las fuentes enlazadas y termina con un quiz.",
+      "El Handbook es la referencia abierta para entender cómo se organiza la empresa y cómo se trabaja."
+    ],
+    "url": "https://handbook.gitlab.com/handbook/company/culture/",
+    "visual": {
+      "tipo": "flujo",
+      "titulo": "De una idea a software que aporta valor",
+      "elementos": ["Idea del equipo", "Colaboración en GitLab", "Software entregado"]
+    }
+  },
+  {
+    "id": "mision-vision",
+    "titulo": "Misión y visión",
+    "puntos": [
+      "La misión para la era de la IA es ayudar a cada equipo a entregar software confiable a la velocidad de la imaginación.",
+      "GitLab quiere quitar obstáculos entre una idea y su llegada a las personas usuarias, sin obligar a elegir entre rapidez y seguridad.",
+      "La visión de plataforma coordina el ciclo del software: planificar, programar, revisar, proteger, desplegar y operar.",
+      "Las personas aportan criterio y dirección; los agentes pueden ejecutar tareas bajo controles y supervisión adecuados."
+    ],
+    "url": "https://handbook.gitlab.com/handbook/company/mission/",
+    "visual": {
+      "tipo": "ciclo",
+      "titulo": "Rapidez con confianza y control",
+      "elementos": ["Personas dirigen", "Agentes colaboran", "Plataforma coordina", "Software confiable"]
+    }
+  },
+  {
+    "id": "valores",
+    "titulo": "Valores de GitLab",
+    "puntos": [
+      "CREDIT reúne seis valores: colaboración, resultados para clientes, eficiencia, diversidad, inclusión y pertenencia, iteración y transparencia.",
+      "Colaborar significa pedir y ofrecer ayuda; se espera escuchar sugerencias y explicar las decisiones sobre el trabajo.",
+      "Iterar es entregar una mejora pequeña y útil, aprender de los comentarios y corregir el rumbo en vez de esperar a la perfección.",
+      "La transparencia comparte contexto para que más personas puedan entender, cuestionar y mejorar el trabajo."
+    ],
+    "url": "https://handbook.gitlab.com/handbook/values/",
+    "visual": {
+      "tipo": "cuadricula",
+      "titulo": "CREDIT: seis valores que orientan las decisiones",
+      "elementos": ["Colaboración", "Resultados para clientes", "Eficiencia", "Diversidad e inclusión", "Iteración", "Transparencia"]
+    }
+  },
+  {
+    "id": "trabajo-remoto",
+    "titulo": "Trabajo 100 % remoto",
+    "puntos": [
+      "GitLab es una empresa totalmente remota desde sus inicios; el trabajo no depende de compartir una oficina física.",
+      "El equipo trabaja desde distintos países y zonas horarias, por lo que no siempre coincide en horario.",
+      "La comunicación asíncrona permite leer, responder y avanzar cuando cada persona está disponible.",
+      "La documentación, las reuniones bien pensadas y las conexiones informales ayudan a mantener claridad y confianza a distancia."
+    ],
+    "url": "https://handbook.gitlab.com/handbook/company/culture/all-remote/",
+    "visual": {
+      "tipo": "red",
+      "titulo": "Un equipo conectado sin compartir oficina",
+      "elementos": ["Zonas horarias", "Trabajo documentado", "Comunicación asíncrona", "Equipo distribuido"]
+    }
+  },
+  {
+    "id": "comunicacion",
+    "titulo": "Comunicación: asíncrono y Handbook First",
+    "puntos": [
+      "Empieza por medios asíncronos —por ejemplo, documentación, issues y mensajes— para que otras personas respondan sin bloquear su jornada.",
+      "Handbook First significa que un cambio de proceso se propone primero en el Handbook, no solo en un chat, correo o presentación.",
+      "La propuesta se integra en la documentación mediante cambios revisables; así el Handbook refleja el proceso vigente y evita copias contradictorias.",
+      "Si una conversación en vivo es útil, registra sus conclusiones y enlaza la página actualizada para que el contexto quede disponible."
+    ],
+    "url": "https://handbook.gitlab.com/handbook/company/culture/all-remote/handbook-first/",
+    "visual": {
+      "tipo": "flujo",
+      "titulo": "Handbook First convierte una propuesta en referencia compartida",
+      "elementos": ["Surge un proceso", "Propuesta en Handbook", "Revisión del cambio", "Referencia actualizada"]
+    }
+  },
+  {
+    "id": "onboarding-buddy",
+    "titulo": "Tu onboarding y tu buddy",
+    "puntos": [
+      "El onboarding reúne tareas comunes y tareas específicas de tu equipo o puesto; se siguen en un issue de GitLab.",
+      "Tu manager te asigna un buddy: una persona cercana que te da la bienvenida y sirve como punto de contacto.",
+      "El buddy puede revisar contigo el issue, sugerir páginas del Handbook y presentarte a especialistas cuando necesites apoyo.",
+      "Acuerden cómo comunicarse y mantengan contacto durante las primeras semanas; pregunta cuando una tarea o herramienta no esté clara."
+    ],
+    "url": "https://handbook.gitlab.com/handbook/people-group/general-onboarding/onboarding-buddies/",
+    "visual": {
+      "tipo": "ruta",
+      "titulo": "Personas y recursos que te acompañan",
+      "elementos": ["Issue de onboarding", "Buddy te orienta", "Handbook y especialistas", "Más autonomía"]
+    }
+  },
+  {
+    "id": "seguridad-herramientas",
+    "titulo": "Seguridad y uso aceptable de herramientas",
+    "puntos": [
+      "Los equipos y recursos administrados por GitLab se entregan para el trabajo; un uso personal limitado debe respetar las reglas aplicables.",
+      "Usa buen criterio con los dispositivos y los datos: protege los recursos y maneja la información de acuerdo con su clasificación.",
+      "No desactives controles de seguridad exigidos sin la aprobación de seguridad correspondiente; los equipos deben cumplir sus estándares.",
+      "No compartas tus credenciales. Usa software aprobado y pide autorización antes de añadir integraciones de Google Workspace o extensiones de Chrome."
+    ],
+    "url": "https://handbook.gitlab.com/handbook/people-group/acceptable-use-policy/",
+    "visual": {
+      "tipo": "cuadricula",
+      "titulo": "Cuatro hábitos para proteger recursos y datos",
+      "elementos": ["Usa recursos con criterio", "Clasifica y protege datos", "Mantén controles activos", "Aprueba el software"]
+    }
+  },
+  {
+    "id": "primera-semana",
+    "titulo": "Tu primera semana: empieza paso a paso",
+    "puntos": [
+      "No se espera que empieces dominando el puesto: el onboarding suele ocupar al menos dos semanas completas.",
+      "Durante las dos primeras semanas, sigue el issue de onboarding y aprende sin presión por contribuir mucho.",
+      "La tercera semana se dedica al aprendizaje y la formación específicos de tu equipo; el plan se puede seguir de forma asíncrona.",
+      "Consulta el Handbook, configura las herramientas que necesitas y conecta con tu buddy y otras personas del equipo."
+    ],
+    "url": "https://handbook.gitlab.com/handbook/company/culture/all-remote/onboarding/",
+    "visual": {
+      "tipo": "cronologia",
+      "titulo": "Una incorporación gradual en las primeras semanas",
+      "elementos": ["Día 1: accesos y bienvenida", "Semanas 1–2: aprender y orientarte", "Semana 3: formación del equipo"]
+    }
+  }
+]

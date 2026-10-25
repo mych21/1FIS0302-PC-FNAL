@@ -1,0 +1,418 @@
+[
+  {
+    "id": "bienvenida-01",
+    "tema": "bienvenida",
+    "pregunta": "¿Qué facilita la plataforma de GitLab según la diapositiva?",
+    "opciones": [
+      "La colaboración de equipos para entregar software",
+      "La administración de oficinas locales",
+      "La contratación exclusiva de desarrolladores",
+      "La sustitución de toda comunicación escrita"
+    ],
+    "indiceCorrecta": 0,
+    "explicacion": "La diapositiva presenta GitLab como una plataforma para colaborar y entregar software."
+  },
+  {
+    "id": "bienvenida-02",
+    "tema": "bienvenida",
+    "pregunta": "¿Qué actitud hacia la contribución describe la cultura de GitLab?",
+    "opciones": [
+      "Solo los managers pueden contribuir fuera de su puesto",
+      "Cada persona puede generar impacto más allá de su descripción de puesto",
+      "Las contribuciones se limitan al equipo de producto",
+      "Solo se contribuye durante la primera semana"
+    ],
+    "indiceCorrecta": 1,
+    "explicacion": "La diapositiva indica que la cultura anima a cada persona a contribuir más allá de su descripción de puesto."
+  },
+  {
+    "id": "bienvenida-03",
+    "tema": "bienvenida",
+    "pregunta": "¿Qué actividad cierra este onboarding?",
+    "opciones": [
+      "Una reunión presencial",
+      "Una evaluación anual",
+      "Un quiz para comprobar lo aprendido",
+      "Una presentación del manager"
+    ],
+    "indiceCorrecta": 2,
+    "explicacion": "El recorrido de ocho temas termina con un quiz."
+  },
+  {
+    "id": "bienvenida-04",
+    "tema": "bienvenida",
+    "pregunta": "¿Dónde se recomienda profundizar en cómo funciona la empresa?",
+    "opciones": [
+      "En un chat privado solamente",
+      "En un manual impreso",
+      "En el calendario del equipo",
+      "En el Handbook"
+    ],
+    "indiceCorrecta": 3,
+    "explicacion": "El Handbook es la guía de cómo funciona la empresa."
+  },
+  {
+    "id": "mision-vision-01",
+    "tema": "mision-vision",
+    "pregunta": "¿Cuál es la misión de GitLab para la era de la IA, según la diapositiva?",
+    "opciones": [
+      "Eliminar la necesidad de equipos de software",
+      "Ayudar a cada equipo a entregar software confiable a la velocidad de la imaginación",
+      "Crear oficinas en todas las zonas horarias",
+      "Limitar la entrega de software a proyectos de IA"
+    ],
+    "indiceCorrecta": 1,
+    "explicacion": "La diapositiva resume la misión como ayudar a los equipos a entregar software confiable con gran rapidez."
+  },
+  {
+    "id": "mision-vision-02",
+    "tema": "mision-vision",
+    "pregunta": "¿Qué fricción busca reducir GitLab?",
+    "opciones": [
+      "La distancia entre una idea y su llegada a las personas usuarias",
+      "La necesidad de aprender continuamente",
+      "La colaboración entre equipos",
+      "El uso de software confiable"
+    ],
+    "indiceCorrecta": 0,
+    "explicacion": "La diapositiva explica que GitLab busca reducir la fricción entre una idea y su llegada a las personas usuarias."
+  },
+  {
+    "id": "mision-vision-03",
+    "tema": "mision-vision",
+    "pregunta": "¿Qué busca coordinar la visión de plataforma descrita?",
+    "opciones": [
+      "Las oficinas y los calendarios",
+      "La contratación y las nóminas",
+      "El ciclo de vida del software",
+      "Las zonas horarias del equipo"
+    ],
+    "indiceCorrecta": 2,
+    "explicacion": "La visión descrita se centra en una plataforma que coordina el ciclo de vida del software."
+  },
+  {
+    "id": "mision-vision-04",
+    "tema": "mision-vision",
+    "pregunta": "¿Quiénes deberían poder trabajar juntos de forma segura según la estrategia?",
+    "opciones": [
+      "Solo las personas usuarias externas",
+      "Personas y agentes de IA",
+      "Únicamente los equipos de seguridad",
+      "Solo quienes trabajan en una oficina"
+    ],
+    "indiceCorrecta": 1,
+    "explicacion": "La estrategia prepara la plataforma para que personas y agentes de IA trabajen juntos de forma segura."
+  },
+  {
+    "id": "valores-01",
+    "tema": "valores",
+    "pregunta": "¿Qué representa el acrónimo CREDIT en GitLab?",
+    "opciones": [
+      "Cinco herramientas para reuniones",
+      "Un plan de incorporación",
+      "Seis valores de la empresa",
+      "Un programa de seguridad"
+    ],
+    "indiceCorrecta": 2,
+    "explicacion": "CREDIT es la forma de recordar los seis valores de GitLab."
+  },
+  {
+    "id": "valores-02",
+    "tema": "valores",
+    "pregunta": "¿Cuál es una conducta que refleja colaboración?",
+    "opciones": [
+      "Ayudar a otras personas y considerar sus sugerencias",
+      "Evitar pedir ayuda",
+      "Esperar hasta que el trabajo esté perfecto",
+      "Guardar toda la información para el propio equipo"
+    ],
+    "indiceCorrecta": 0,
+    "explicacion": "La colaboración incluye ayudarse y considerar las sugerencias de otras personas."
+  },
+  {
+    "id": "valores-03",
+    "tema": "valores",
+    "pregunta": "¿Qué promueve el valor de iteración?",
+    "opciones": [
+      "Esperar hasta tener un producto completamente pulido",
+      "Evitar modificar el trabajo una vez iniciado",
+      "Entregar mejoras útiles, recibir comentarios y ajustar",
+      "Reducir la transparencia para evitar cambios"
+    ],
+    "indiceCorrecta": 2,
+    "explicacion": "Iterar significa entregar una mejora útil pronto, aprender de los comentarios y ajustar el trabajo."
+  },
+  {
+    "id": "valores-04",
+    "tema": "valores",
+    "pregunta": "¿Qué permite la transparencia?",
+    "opciones": [
+      "Que la información permanezca solo en conversaciones privadas",
+      "Compartir información y contexto para que otras personas contribuyan",
+      "Eliminar la colaboración entre departamentos",
+      "Evitar documentar el trabajo"
+    ],
+    "indiceCorrecta": 1,
+    "explicacion": "La transparencia comparte información y contexto para facilitar la contribución."
+  },
+  {
+    "id": "trabajo-remoto-01",
+    "tema": "trabajo-remoto",
+    "pregunta": "¿Desde cuándo trabaja GitLab de forma remota?",
+    "opciones": [
+      "Desde sus inicios",
+      "Solo desde que se creó su plataforma",
+      "Desde que abrió su primera oficina",
+      "Únicamente durante la primera semana de onboarding"
+    ],
+    "indiceCorrecta": 0,
+    "explicacion": "La diapositiva señala que GitLab trabaja de forma remota desde sus inicios."
+  },
+  {
+    "id": "trabajo-remoto-02",
+    "tema": "trabajo-remoto",
+    "pregunta": "¿Qué facilita la comunicación asíncrona en un equipo distribuido?",
+    "opciones": [
+      "Que todas las personas trabajen en la misma oficina",
+      "Que el trabajo avance sin coincidir en línea al mismo tiempo",
+      "Que se elimine la documentación",
+      "Que cada persona trabaje sin colaborar"
+    ],
+    "indiceCorrecta": 1,
+    "explicacion": "La comunicación asíncrona permite avanzar aunque el equipo no esté conectado a la vez."
+  },
+  {
+    "id": "trabajo-remoto-03",
+    "tema": "trabajo-remoto",
+    "pregunta": "¿Qué ayuda a los equipos remotos a colaborar con claridad?",
+    "opciones": [
+      "Depender de conversaciones improvisadas",
+      "Trabajar solo durante el mismo horario",
+      "La documentación y las prácticas compartidas",
+      "Evitar compartir contexto"
+    ],
+    "indiceCorrecta": 2,
+    "explicacion": "La documentación y las prácticas compartidas ayudan a mantener claridad en la colaboración remota."
+  },
+  {
+    "id": "trabajo-remoto-04",
+    "tema": "trabajo-remoto",
+    "pregunta": "¿Qué característica describe la organización del equipo de GitLab?",
+    "opciones": [
+      "Está concentrado en un único país",
+      "Depende de oficinas para colaborar",
+      "Trabaja exclusivamente en horarios idénticos",
+      "Está distribuido por distintos países y zonas horarias"
+    ],
+    "indiceCorrecta": 3,
+    "explicacion": "La diapositiva describe un equipo distribuido por muchos países y zonas horarias."
+  },
+  {
+    "id": "comunicacion-01",
+    "tema": "comunicacion",
+    "pregunta": "¿Qué estilo de comunicación se prioriza para colaborar entre zonas horarias?",
+    "opciones": [
+      "Asíncrono",
+      "Solo llamadas en vivo",
+      "Solo mensajes privados",
+      "Comunicación sin documentación"
+    ],
+    "indiceCorrecta": 0,
+    "explicacion": "La comunicación asíncrona permite que el trabajo avance entre distintas zonas horarias."
+  },
+  {
+    "id": "comunicacion-02",
+    "tema": "comunicacion",
+    "pregunta": "¿Qué se debe hacer antes de comunicar un cambio de proceso?",
+    "opciones": [
+      "Anunciarlo solo en una reunión",
+      "Proponer actualizar primero la página pertinente del Handbook",
+      "Esperar a que cada equipo cree su propia guía",
+      "Enviar un correo sin documentación"
+    ],
+    "indiceCorrecta": 1,
+    "explicacion": "Handbook First significa proponer primero el cambio en la página pertinente del Handbook."
+  },
+  {
+    "id": "comunicacion-03",
+    "tema": "comunicacion",
+    "pregunta": "¿Por qué conviene documentar procesos y cambios en el Handbook?",
+    "opciones": [
+      "Para limitar el acceso a la información",
+      "Para reemplazar toda conversación con una reunión",
+      "Para tener una referencia compartida y actualizada",
+      "Para mantener varias copias independientes"
+    ],
+    "indiceCorrecta": 2,
+    "explicacion": "El Handbook proporciona una referencia compartida y actualizada."
+  },
+  {
+    "id": "comunicacion-04",
+    "tema": "comunicacion",
+    "pregunta": "¿Qué se recomienda hacer después de una conversación en vivo?",
+    "opciones": [
+      "Dejar las conclusiones solo en la memoria de quienes asistieron",
+      "Evitar compartirlas con el resto del equipo",
+      "Borrar cualquier nota de la reunión",
+      "Documentar las conclusiones y enlazar la información relevante"
+    ],
+    "indiceCorrecta": 3,
+    "explicacion": "Las conclusiones deben quedar escritas y enlazar la información útil."
+  },
+  {
+    "id": "onboarding-buddy-01",
+    "tema": "onboarding-buddy",
+    "pregunta": "¿Quién asigna el onboarding buddy?",
+    "opciones": [
+      "El manager",
+      "La persona recién contratada",
+      "El equipo de producto",
+      "El servicio de IT"
+    ],
+    "indiceCorrecta": 0,
+    "explicacion": "La diapositiva indica que el manager asigna el buddy."
+  },
+  {
+    "id": "onboarding-buddy-02",
+    "tema": "onboarding-buddy",
+    "pregunta": "¿Cuál es una función del buddy?",
+    "opciones": [
+      "Aprobar todas las decisiones del nuevo integrante",
+      "Orientar y ser una persona de contacto durante la incorporación",
+      "Completar el trabajo en lugar de la persona nueva",
+      "Sustituir al manager"
+    ],
+    "indiceCorrecta": 1,
+    "explicacion": "El buddy es una persona de contacto que orienta durante el onboarding."
+  },
+  {
+    "id": "onboarding-buddy-03",
+    "tema": "onboarding-buddy",
+    "pregunta": "¿Con qué puede ayudar el buddy?",
+    "opciones": [
+      "A eliminar todas las tareas de onboarding",
+      "A evitar el uso del Handbook",
+      "A revisar tareas, encontrar páginas y conectar con especialistas",
+      "A cambiar las políticas de la empresa"
+    ],
+    "indiceCorrecta": 2,
+    "explicacion": "La diapositiva enumera esas tres formas de apoyo del buddy."
+  },
+  {
+    "id": "onboarding-buddy-04",
+    "tema": "onboarding-buddy",
+    "pregunta": "¿Qué hacer si algo del onboarding no está claro?",
+    "opciones": [
+      "Esperar hasta terminar todas las tareas",
+      "No comentarlo con nadie",
+      "Buscar una respuesta fuera de los canales de GitLab",
+      "Pedir ayuda al buddy"
+    ],
+    "indiceCorrecta": 3,
+    "explicacion": "La diapositiva aconseja pedir ayuda cuando algo no esté claro."
+  },
+  {
+    "id": "seguridad-herramientas-01",
+    "tema": "seguridad-herramientas",
+    "pregunta": "¿Para qué se proporcionan principalmente los recursos administrados por GitLab?",
+    "opciones": [
+      "Para uso personal sin restricciones",
+      "Para realizar el trabajo de GitLab, con uso personal limitado sujeto a las reglas aplicables",
+      "Para compartirlos con cualquier otra persona",
+      "Para reemplazar las herramientas de trabajo aprobadas"
+    ],
+    "indiceCorrecta": 1,
+    "explicacion": "Los recursos se proporcionan para el trabajo de GitLab; el uso personal limitado está sujeto a las condiciones aplicables."
+  },
+  {
+    "id": "seguridad-herramientas-02",
+    "tema": "seguridad-herramientas",
+    "pregunta": "¿Cómo deben manejarse los datos de GitLab y de sus clientes?",
+    "opciones": [
+      "Según su clasificación",
+      "Copiándolos a cualquier servicio externo",
+      "Compartiendo todos los datos con el equipo completo",
+      "Sin considerar su nivel de sensibilidad"
+    ],
+    "indiceCorrecta": 0,
+    "explicacion": "La política indica que los datos deben manejarse de acuerdo con su clasificación."
+  },
+  {
+    "id": "seguridad-herramientas-03",
+    "tema": "seguridad-herramientas",
+    "pregunta": "¿Cuándo se pueden desactivar los controles de seguridad requeridos?",
+    "opciones": [
+      "Cuando dificulten el trabajo",
+      "Cuando lo solicite cualquier compañero",
+      "Nunca, ni siquiera mediante un proceso formal",
+      "Solo con la aprobación de seguridad correspondiente"
+    ],
+    "indiceCorrecta": 3,
+    "explicacion": "La política prohíbe desactivar controles requeridos sin aprobación mediante el proceso correspondiente."
+  },
+  {
+    "id": "seguridad-herramientas-04",
+    "tema": "seguridad-herramientas",
+    "pregunta": "¿Cuál de estas prácticas está prohibida por la política de uso aceptable?",
+    "opciones": [
+      "Solicitar aprobación para usar software nuevo",
+      "Compartir credenciales o usar extensiones no autorizadas",
+      "Usar los recursos administrados para trabajar",
+      "Manejar los datos según su clasificación"
+    ],
+    "indiceCorrecta": 1,
+    "explicacion": "La política prohíbe compartir credenciales y restringe las integraciones de Google Workspace y extensiones de Chrome no autorizadas."
+  },
+  {
+    "id": "primera-semana-01",
+    "tema": "primera-semana",
+    "pregunta": "¿Qué expectativa existe sobre el primer día en el puesto?",
+    "opciones": [
+      "Dominar todas las responsabilidades inmediatamente",
+      "Completar el onboarding en una sola llamada",
+      "No se espera dominar el puesto desde el primer día",
+      "Evitar aprender hasta la tercera semana"
+    ],
+    "indiceCorrecta": 2,
+    "explicacion": "La diapositiva aclara que no se espera dominar el puesto desde el primer día."
+  },
+  {
+    "id": "primera-semana-02",
+    "tema": "primera-semana",
+    "pregunta": "¿Dónde se siguen las tareas de onboarding?",
+    "opciones": [
+      "En un issue asignado",
+      "En una libreta personal exclusivamente",
+      "En una reunión semanal solamente",
+      "En un documento sin acceso del equipo"
+    ],
+    "indiceCorrecta": 0,
+    "explicacion": "La diapositiva recomienda avanzar en las tareas del issue de onboarding asignado."
+  },
+  {
+    "id": "primera-semana-03",
+    "tema": "primera-semana",
+    "pregunta": "¿Cuál es la fuente central recomendada para encontrar respuestas?",
+    "opciones": [
+      "Un chat de equipo privado",
+      "El Handbook",
+      "Una lista personal de notas",
+      "Una reunión presencial"
+    ],
+    "indiceCorrecta": 1,
+    "explicacion": "El Handbook es la fuente central para conocer cómo se trabaja y encontrar respuestas."
+  },
+  {
+    "id": "primera-semana-04",
+    "tema": "primera-semana",
+    "pregunta": "¿Qué se recomienda sobre la contribución al trabajo al inicio?",
+    "opciones": [
+      "No participar hasta terminar el primer mes",
+      "Contribuir mucho desde el primer día",
+      "Trabajar sin conocer al equipo",
+      "Puedes participar, sin presión por contribuir mucho al principio"
+    ],
+    "indiceCorrecta": 3,
+    "explicacion": "La diapositiva permite participar al inicio, pero sin presión por contribuir mucho."
+  }
+]

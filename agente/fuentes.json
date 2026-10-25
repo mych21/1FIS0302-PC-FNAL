@@ -1,0 +1,50 @@
+[
+  {
+    "id": "bienvenida",
+    "titulo": "Bienvenida: GitLab y este onboarding",
+    "url": "https://handbook.gitlab.com/handbook/company/culture/",
+    "hash": ""
+  },
+  {
+    "id": "mision-vision",
+    "titulo": "Misión y visión",
+    "url": "https://handbook.gitlab.com/handbook/company/mission/",
+    "hash": ""
+  },
+  {
+    "id": "valores",
+    "titulo": "Valores de la empresa",
+    "url": "https://handbook.gitlab.com/handbook/values/",
+    "hash": ""
+  },
+  {
+    "id": "trabajo-remoto",
+    "titulo": "Trabajo 100 % remoto",
+    "url": "https://handbook.gitlab.com/handbook/company/culture/all-remote/",
+    "hash": ""
+  },
+  {
+    "id": "comunicacion",
+    "titulo": "Comunicación asíncrona y Handbook First",
+    "url": "https://handbook.gitlab.com/handbook/company/culture/all-remote/handbook-first/",
+    "hash": ""
+  },
+  {
+    "id": "onboarding-buddy",
+    "titulo": "Proceso de onboarding y buddy",
+    "url": "https://handbook.gitlab.com/handbook/people-group/general-onboarding/onboarding-buddies/",
+    "hash": ""
+  },
+  {
+    "id": "seguridad-herramientas",
+    "titulo": "Seguridad y uso aceptable de herramientas",
+    "url": "https://handbook.gitlab.com/handbook/people-group/acceptable-use-policy/",
+    "hash": ""
+  },
+  {
+    "id": "primera-semana",
+    "titulo": "Tu primera semana",
+    "url": "https://handbook.gitlab.com/handbook/company/culture/all-remote/onboarding/",
+    "hash": ""
+  }
+]
