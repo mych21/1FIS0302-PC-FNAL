@@ -78,3 +78,6 @@ Registro cronológico de las solicitudes y del trabajo realizado para este proye
 
 - El usuario pidió registrar toda la bitácora de interacciones en este archivo; se mantiene aquí el historial cronológico de requisitos, cambios, validaciones, commits y revisiones de pull request.
 - El usuario aclaró que la actualización del contenido se realiza con el agente de Copilot en GitHub, desde la pestaña **Agents**, disponible de forma limitada en Copilot Free. Se corrigió la descripción correspondiente en `README.md`.
+- El usuario aclaró que el agente en la nube está desactivado por el administrador de la cuenta institucional y pidió que el agente personalizado trabaje desde la app de escritorio de GitHub Copilot: ejecutar localmente el detector, detenerse si no hay cambios y, si los hay, actualizar solo esos temas, validar, crear una rama, commit y pull request.
+- Se actualizaron las instrucciones de `.github/agents/actualizador-onboarding.agent.md` y la sección correspondiente del README. El workflow de Actions se documenta como detector opcional; no sustituye el flujo local del agente.
+- El usuario solicitó crear una rama y un commit con el título `Onboarding vX.Y.Z` y abrir un pull request con ese mismo título después de validar la nueva versión. Las instrucciones del agente reflejan ese requisito.
