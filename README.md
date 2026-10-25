@@ -80,6 +80,8 @@ Para inicializar los hashes manualmente, ejecuta `node agente/actualizar.js --in
 3. Escribe **Actualizar onboarding**.
 4. Si hubo cambios, revisa el pull request **Onboarding vX.Y.Z** y fusiónalo; GitHub Pages publicará la versión nueva. Si no hubo cambios, el agente lo informa y no crea una versión.
 
+Para actualizar intencionalmente temas aunque sus fuentes no hayan cambiado, solicita **Forzar actualización de [tema]**. El agente ejecutará `node agente/actualizar.js --forzar valores`; para varios temas puede usar IDs separados por comas (por ejemplo, `--forzar valores,comunicacion`) o `--forzar todos`.
+
 ## Uso de GitHub Copilot
 
 | Tarea | Qué pedí | Qué sugirió | Mi decisión y por qué |

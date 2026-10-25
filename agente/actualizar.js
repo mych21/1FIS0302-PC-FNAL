@@ -176,13 +176,21 @@ function writeGitHubOutput(values) {
 }
 
 function parseArguments(args) {
-  const options = { initialize: false };
+  const options = { initialize: false, forcedTopics: null };
   for (let index = 0; index < args.length; index += 1) {
     if (args[index] === "--inicializar") {
       requireValue(!options.initialize, "La opción --inicializar no debe repetirse.");
       options.initialize = true;
+    } else if (args[index] === "--forzar") {
+      requireValue(
+        !options.forcedTopics && args[index + 1] && !args[index + 1].startsWith("--"),
+        "La opción --forzar requiere temas separados por comas o 'todos'."
+      );
+      options.forcedTopics = args[index + 1].split(",").map((topic) => topic.trim());
+      requireValue(options.forcedTopics.every(Boolean), "La opción --forzar contiene un tema vacío.");
+      index += 1;
     } else if (args[index] === "--output") {
-      requireValue(!options.output && args[index + 1], "La opción --output requiere una ruta.");
+      requireValue(!options.output && args[index + 1] && !args[index + 1].startsWith("--"), "La opción --output requiere una ruta.");
       options.output = path.resolve(args[index + 1]);
       index += 1;
     } else {
@@ -192,9 +200,30 @@ function parseArguments(args) {
   return options;
 }
 
+function resolveForcedTopics(options, sources) {
+  if (!options.forcedTopics) return new Set();
+  requireValue(!options.initialize, "No se pueden combinar --inicializar y --forzar.");
+  const validIds = sources.map((source) => source.id);
+  const requested = options.forcedTopics;
+
+  if (requested.length === 1 && requested[0] === "todos") return new Set(validIds);
+  requireValue(
+    !requested.includes("todos") && new Set(requested).size === requested.length,
+    "Usa 'todos' por separado o indica cada tema una sola vez."
+  );
+
+  const invalid = requested.filter((id) => !validIds.includes(id));
+  requireValue(
+    invalid.length === 0,
+    `Tema(s) no válido(s): ${invalid.join(", ")}. Temas válidos: ${validIds.join(", ")}.`
+  );
+  return new Set(requested);
+}
+
 async function main() {
   const options = parseArguments(process.argv.slice(2));
   const sources = readSources();
+  const forcedTopics = resolveForcedTopics(options, sources);
   const latestHashes = new Map();
 
   for (const source of sources) {
@@ -211,12 +240,13 @@ async function main() {
   }
 
   const changed = sources
-    .filter((source) => source.hash !== latestHashes.get(source.id))
+    .filter((source) => source.hash !== latestHashes.get(source.id) || forcedTopics.has(source.id))
     .map((source) => ({
       id: source.id,
       titulo: source.titulo,
       url: source.url,
-      hash: latestHashes.get(source.id)
+      hash: latestHashes.get(source.id),
+      forzado: forcedTopics.has(source.id)
     }));
 
   if (changed.length === 0) {

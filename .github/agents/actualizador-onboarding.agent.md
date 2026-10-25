@@ -11,6 +11,7 @@ Ejecuta esta tarea en el repositorio local desde la app de escritorio de GitHub 
 
 - Lee `README.md` y `versiones/historial.json` antes de editar. Sigue la sección **Especificación** del README.
 - Ejecuta `node agente/actualizar.js` desde la raíz del repositorio. El script consulta las URL registradas en `agente/fuentes.json`, calcula hashes SHA-256 y compara las páginas con los hashes guardados.
+- Si el usuario pide explícitamente “Forzar actualización de [tema]”, ejecuta `node agente/actualizar.js --forzar [id]`, usando el ID exacto de `agente/fuentes.json`. Para varios temas, separa los IDs con comas; para todos, usa `node agente/actualizar.js --forzar todos`. La opción marca esos temas para actualizar aunque sus hashes no hayan cambiado.
 - Si el detector informa que no hubo cambios, comunícaselo al usuario y termina sin editar, generar versiones, crear ramas, hacer commits ni abrir pull requests.
 - Si el detector falla, detente y explica el error. No interpretes un error de red o extracción como ausencia de cambios.
 - Usa exclusivamente las URL de `agente/fuentes.json`. No sigas enlaces externos ni uses otras páginas como fuentes.
@@ -26,13 +27,13 @@ Ejecuta esta tarea en el repositorio local desde la app de escritorio de GitHub 
 ## Procedimiento
 
 1. Revisa `git status` para identificar y preservar cambios ajenos. Lee `README.md`, `versiones/historial.json`, `agente/fuentes.json`, `datos/slides.json` y `datos/quiz.json`.
-2. Ejecuta:
+2. Si el usuario pidió una actualización normal, ejecuta:
 
    ```sh
    node agente/actualizar.js
    ```
 
-   Si hay cambios, el detector imprime la ruta a un archivo JSON con los temas afectados, sus títulos, URL y SHA-256 actual. Lee ese reporte. Si no hay cambios, informa al usuario y termina.
+   Si el usuario pidió forzar temas, ejecuta el mismo comando con `--forzar`, por ejemplo `node agente/actualizar.js --forzar valores,comunicacion`; para todos los temas, usa `node agente/actualizar.js --forzar todos`. Si se indica un tema desconocido, el detector muestra los IDs válidos; informa el error y detente. Si hay cambios o temas forzados, el detector imprime la ruta a un archivo JSON con los temas afectados, sus títulos, URL, SHA-256 actual y un indicador `forzado`. Lee ese reporte. Si no hay cambios ni temas forzados, informa al usuario y termina.
 3. Consulta únicamente las URL de los temas incluidos en el reporte. Verifica el contenido actual de cada página y no sigas redirecciones fuera de `https://handbook.gitlab.com/handbook/`.
 4. Reescribe únicamente las diapositivas y preguntas de los temas afectados. Actualiza el hash correspondiente en `agente/fuentes.json` con el SHA-256 del reporte. No cambies otros temas.
 5. Determina la versión semántica más alta de `versiones/historial.json` e incrementa su número menor, dejando el parche en cero (por ejemplo, `1.1.0` a `1.2.0`). Registra en el historial únicamente los IDs de los temas afectados.
