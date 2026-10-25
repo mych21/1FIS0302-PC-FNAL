@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Onboarding académico e independiente sobre GitLab.">
+  <title>Onboarding de GitLab</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #20232a;
+      background: #f5f6f8;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; }
+    main { width: min(100% - 2rem, 52rem); margin: 2rem auto; flex: 1; }
+    .card, .footer-card {
+      background: #fff;
+      border: 1px solid #dfe2e8;
+      border-radius: .8rem;
+      box-shadow: 0 4px 18px rgb(20 31 55 / 6%);
+    }
+    .card { padding: clamp(1rem, 4vw, 2.5rem); }
+    .eyebrow { color: #555d6d; font-size: .9rem; margin: 0 0 .5rem; }
+    h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 0 0 1.25rem; }
+    .slide-points { padding-left: 1.5rem; }
+    .slide-points li { line-height: 1.65; margin: .7rem 0; padding-left: .25rem; }
+    .diagram {
+      margin: 1.5rem 0 .25rem;
+      padding: 1rem;
+      border: 1px solid #e5e3f5;
+      border-radius: .7rem;
+      background: linear-gradient(145deg, #fbfaff, #f4f7ff);
+    }
+    .diagram-heading { display: flex; align-items: center; gap: .8rem; margin-bottom: .5rem; }
+    .diagram-heading h2 { font-size: 1.05rem; line-height: 1.35; margin: 0; }
+    .illustration { flex: 0 0 3.25rem; width: 3.25rem; height: 3.25rem; color: #5b45d6; }
+    .diagram-items { list-style: none; padding: 0; margin: .8rem 0 0; }
+    .diagram-items li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      min-height: 3.5rem;
+      padding: .7rem .85rem;
+      border: 1px solid #c9c3f1;
+      border-radius: .65rem;
+      background: #fff;
+      line-height: 1.4;
+    }
+    .diagram-number {
+      display: grid;
+      place-items: center;
+      flex: 0 0 1.8rem;
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 50%;
+      background: #ece9ff;
+      color: #4634b0;
+      font-size: .85rem;
+      font-weight: 750;
+    }
+    .diagram-label { font-weight: 650; }
+    .diagram-items-flujo, .diagram-items-ruta { display: grid; gap: .9rem; }
+    .diagram-items-flujo li:not(:last-child)::after,
+    .diagram-items-ruta li:not(:last-child)::after {
+      position: absolute;
+      z-index: 1;
+      bottom: -.95rem;
+      left: 50%;
+      color: #6b4eff;
+      content: "↓";
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .diagram-items-ciclo {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+    .diagram-items-ciclo li:nth-child(3) { grid-column: 2; grid-row: 2; }
+    .diagram-items-ciclo li:nth-child(4) { grid-column: 1; grid-row: 2; }
+    .diagram-items-ciclo li:nth-child(1)::after,
+    .diagram-items-ciclo li:nth-child(2)::after,
+    .diagram-items-ciclo li:nth-child(3)::after,
+    .diagram-items-ciclo li:nth-child(4)::after {
+      position: absolute;
+      color: #6b4eff;
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+    .diagram-items-ciclo li:nth-child(1)::after { content: "→"; right: -.95rem; }
+    .diagram-items-ciclo li:nth-child(2)::after { content: "↓"; bottom: -1.25rem; left: 50%; }
+    .diagram-items-ciclo li:nth-child(3)::after { content: "←"; left: -.95rem; }
+    .diagram-items-ciclo li:nth-child(4)::after { content: "↑"; top: -.95rem; left: 50%; }
+    .diagram-items-cuadricula, .diagram-items-red { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
+    .diagram-items-cuadricula li { min-height: 4.2rem; }
+    .diagram-hub {
+      width: fit-content;
+      max-width: 100%;
+      margin: 1rem auto .7rem;
+      padding: .7rem 1.1rem;
+      border: 2px solid #8b7be8;
+      border-radius: 2rem;
+      background: #eeebff;
+      color: #392c91;
+      font-weight: 750;
+      text-align: center;
+    }
+    .diagram-hub::after {
+      display: block;
+      width: 1px;
+      height: .7rem;
+      margin: .65rem auto -.7rem;
+      border-left: 2px dashed #8173d8;
+      content: "";
+    }
+    .diagram-items-cronologia { position: relative; display: grid; gap: .8rem; padding-left: 1.5rem; }
+    .diagram-items-cronologia::before {
+      position: absolute;
+      top: 1rem;
+      bottom: 1rem;
+      left: .55rem;
+      border-left: 2px solid #8173d8;
+      content: "";
+    }
+    .diagram-items-cronologia li::before {
+      position: absolute;
+      top: 50%;
+      left: -1.36rem;
+      width: .65rem;
+      height: .65rem;
+      transform: translateY(-50%);
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background: #6b4eff;
+      box-shadow: 0 0 0 2px #8173d8;
+      content: "";
+    }
+    .diagram figcaption { color: #4c5260; font-size: .83rem; margin-top: .45rem; }
+    .source { display: inline-block; margin-top: 1rem; overflow-wrap: anywhere; }
+    .progress-track { height: .65rem; background: #e7e9ee; border-radius: 1rem; overflow: hidden; margin: .6rem 0 1.5rem; }
+    .progress-value { height: 100%; width: 0; background: #6b4eff; transition: width .2s ease; }
+    .controls { display: flex; justify-content: space-between; gap: .75rem; margin-top: 1.5rem; }
+    button {
+      border: 0;
+      border-radius: .45rem;
+      padding: .7rem 1rem;
+      font: inherit;
+      font-weight: 650;
+      background: #6b4eff;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover { background: #5138d8; }
+    button:focus-visible, a:focus-visible { outline: 3px solid #fca326; outline-offset: 3px; }
+    button.secondary { background: #e9e7ff; color: #322080; }
+    button.secondary:hover { background: #dcd8ff; }
+    button:disabled { background: #d6d8de; color: #555d6d; cursor: not-allowed; }
+    [hidden] { display: none !important; }
+    .answers { display: grid; gap: .65rem; margin-top: 1rem; }
+    .answers button { text-align: left; background: #f0efff; color: #28204f; }
+    .answers button:hover:not(:disabled) { background: #dfdcff; }
+    .answers button.correct { background: #d8f2e2; color: #174c2a; }
+    .answers button.incorrect { background: #ffe1df; color: #76241f; }
+    .feedback { margin-top: 1rem; padding: 1rem; border-radius: .5rem; background: #f2f3f5; line-height: 1.5; }
+    .feedback.good { background: #e7f6ec; }
+    .feedback.bad { background: #fff0ee; }
+    .result { line-height: 1.6; }
+    .footer-card { margin: 1.5rem auto; width: min(100% - 2rem, 52rem); padding: 1rem 1.25rem; font-size: .85rem; color: #4c5260; }
+    .footer-card p { margin: .35rem 0; }
+    .sources { padding-left: 1.2rem; margin-bottom: 0; }
+    .sources li { margin: .25rem 0; }
+    a { color: #4935b8; }
+    @media (max-width: 36rem) {
+      main { margin: 1rem auto; }
+      .controls { flex-wrap: wrap; }
+      .controls button { flex: 1 1 40%; }
+      .diagram { padding: .75rem; }
+    }
+    @media (max-width: 22rem) {
+      .diagram-items-ciclo { grid-template-columns: 1fr; gap: .8rem; }
+      .diagram-items-ciclo li:nth-child(3), .diagram-items-ciclo li:nth-child(4) { grid-column: auto; grid-row: auto; }
+      .diagram-items-ciclo li:nth-child(n)::after { top: auto; right: auto; bottom: -.9rem; left: 50%; content: "↓"; }
+      .diagram-items-ciclo li:last-child::after { content: "↻"; }
+      .diagram-items-cuadricula, .diagram-items-red { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="presentation" aria-live="polite">
+      <p id="counter" class="eyebrow"></p>
+      <div class="progress-track" role="progressbar" aria-label="Progreso de la presentación" aria-valuemin="1" aria-valuemax="8" aria-valuenow="1">
+        <div id="progress" class="progress-value"></div>
+      </div>
+      <article id="slide" class="card"></article>
+      <nav class="controls" aria-label="Navegación de diapositivas">
+        <button id="previous" class="secondary" type="button">Anterior</button>
+        <button id="next" type="button">Siguiente</button>
+        <button id="start-quiz" type="button" hidden>Comenzar quiz</button>
+      </nav>
+    </section>
+
+    <section id="quiz" class="card" aria-live="polite" hidden></section>
+  </main>
+
+  <footer class="footer-card">
+    <p><strong>Versión:</strong> <span id="version"></span> · <strong>Fecha de generación:</strong> <time id="generation-date"></time></p>
+    <p><strong>Páginas fuente usadas:</strong></p>
+    <ul id="sources" class="sources"></ul>
+    <p>Proyecto académico, no oficial ni afiliado a GitLab. No se utiliza su logotipo.</p>
+  </footer>
+
+  <script>
+    "use strict";
+    const slides = [{"id":"bienvenida","titulo":"Bienvenida a GitLab","puntos":["GitLab desarrolla una plataforma para que equipos colaboren durante el ciclo de vida del software y puedan entregar resultados.","La cultura de GitLab invita a cada integrante a aportar ideas e impacto más allá de las tareas de su puesto.","Este recorrido resume ocho temas; avanza a tu ritmo, consulta las fuentes enlazadas y termina con un quiz.","El Handbook es la referencia abierta para entender cómo se organiza la empresa y cómo se trabaja."],"url":"https://handbook.gitlab.com/handbook/company/culture/","visual":{"tipo":"flujo","titulo":"De una idea a software que aporta valor","elementos":["Idea del equipo","Colaboración en GitLab","Software entregado"]}},{"id":"mision-vision","titulo":"Misión y visión","puntos":["La misión para la era de la IA es ayudar a cada equipo a entregar software confiable a la velocidad de la imaginación.","GitLab quiere quitar obstáculos entre una idea y su llegada a las personas usuarias, sin obligar a elegir entre rapidez y seguridad.","La visión de plataforma coordina el ciclo del software: planificar, programar, revisar, proteger, desplegar y operar.","Las personas aportan criterio y dirección; los agentes pueden ejecutar tareas bajo controles y supervisión adecuados."],"url":"https://handbook.gitlab.com/handbook/company/mission/","visual":{"tipo":"ciclo","titulo":"Rapidez con confianza y control","elementos":["Personas dirigen","Agentes colaboran","Plataforma coordina","Software confiable"]}},{"id":"valores","titulo":"Valores de GitLab","puntos":["CREDIT reúne seis valores: colaboración, resultados para clientes, eficiencia, diversidad, inclusión y pertenencia, iteración y transparencia.","Colaborar significa pedir y ofrecer ayuda; se espera escuchar sugerencias y explicar las decisiones sobre el trabajo.","Iterar es entregar una mejora pequeña y útil, aprender de los comentarios y corregir el rumbo en vez de esperar a la perfección.","La transparencia comparte contexto para que más personas puedan entender, cuestionar y mejorar el trabajo."],"url":"https://handbook.gitlab.com/handbook/values/","visual":{"tipo":"cuadricula","titulo":"CREDIT: seis valores que orientan las decisiones","elementos":["Colaboración","Resultados para clientes","Eficiencia","Diversidad e inclusión","Iteración","Transparencia"]}},{"id":"trabajo-remoto","titulo":"Trabajo 100 % remoto","puntos":["GitLab es una empresa totalmente remota desde sus inicios; el trabajo no depende de compartir una oficina física.","El equipo trabaja desde distintos países y zonas horarias, por lo que no siempre coincide en horario.","La comunicación asíncrona permite leer, responder y avanzar cuando cada persona está disponible.","La documentación, las reuniones bien pensadas y las conexiones informales ayudan a mantener claridad y confianza a distancia."],"url":"https://handbook.gitlab.com/handbook/company/culture/all-remote/","visual":{"tipo":"red","titulo":"Un equipo conectado sin compartir oficina","elementos":["Zonas horarias","Trabajo documentado","Comunicación asíncrona","Equipo distribuido"]}},{"id":"comunicacion","titulo":"Comunicación: asíncrono y Handbook First","puntos":["Empieza por medios asíncronos —por ejemplo, documentación, issues y mensajes— para que otras personas respondan sin bloquear su jornada.","Handbook First significa que un cambio de proceso se propone primero en el Handbook, no solo en un chat, correo o presentación.","La propuesta se integra en la documentación mediante cambios revisables; así el Handbook refleja el proceso vigente y evita copias contradictorias.","Si una conversación en vivo es útil, registra sus conclusiones y enlaza la página actualizada para que el contexto quede disponible."],"url":"https://handbook.gitlab.com/handbook/company/culture/all-remote/handbook-first/","visual":{"tipo":"flujo","titulo":"Handbook First convierte una propuesta en referencia compartida","elementos":["Surge un proceso","Propuesta en Handbook","Revisión del cambio","Referencia actualizada"]}},{"id":"onboarding-buddy","titulo":"Tu onboarding y tu buddy","puntos":["El onboarding reúne tareas comunes y tareas específicas de tu equipo o puesto; se siguen en un issue de GitLab.","Tu manager te asigna un buddy: una persona cercana que te da la bienvenida y sirve como punto de contacto.","El buddy puede revisar contigo el issue, sugerir páginas del Handbook y presentarte a especialistas cuando necesites apoyo.","Acuerden cómo comunicarse y mantengan contacto durante las primeras semanas; pregunta cuando una tarea o herramienta no esté clara."],"url":"https://handbook.gitlab.com/handbook/people-group/general-onboarding/onboarding-buddies/","visual":{"tipo":"ruta","titulo":"Personas y recursos que te acompañan","elementos":["Issue de onboarding","Buddy te orienta","Handbook y especialistas","Más autonomía"]}},{"id":"seguridad-herramientas","titulo":"Seguridad y uso aceptable de herramientas","puntos":["Los equipos y recursos administrados por GitLab se entregan para el trabajo; un uso personal limitado debe respetar las reglas aplicables.","Usa buen criterio con los dispositivos y los datos: protege los recursos y maneja la información de acuerdo con su clasificación.","No desactives controles de seguridad exigidos sin la aprobación de seguridad correspondiente; los equipos deben cumplir sus estándares.","No compartas tus credenciales. Usa software aprobado y pide autorización antes de añadir integraciones de Google Workspace o extensiones de Chrome."],"url":"https://handbook.gitlab.com/handbook/people-group/acceptable-use-policy/","visual":{"tipo":"cuadricula","titulo":"Cuatro hábitos para proteger recursos y datos","elementos":["Usa recursos con criterio","Clasifica y protege datos","Mantén controles activos","Aprueba el software"]}},{"id":"primera-semana","titulo":"Tu primera semana: empieza paso a paso","puntos":["No se espera que empieces dominando el puesto: el onboarding suele ocupar al menos dos semanas completas.","Durante las dos primeras semanas, sigue el issue de onboarding y aprende sin presión por contribuir mucho.","La tercera semana se dedica al aprendizaje y la formación específicos de tu equipo; el plan se puede seguir de forma asíncrona.","Consulta el Handbook, configura las herramientas que necesitas y conecta con tu buddy y otras personas del equipo."],"url":"https://handbook.gitlab.com/handbook/company/culture/all-remote/onboarding/","visual":{"tipo":"cronologia","titulo":"Una incorporación gradual en las primeras semanas","elementos":["Día 1: accesos y bienvenida","Semanas 1–2: aprender y orientarte","Semana 3: formación del equipo"]}}];
+    const quizBank = [{"id":"bienvenida-01","tema":"bienvenida","pregunta":"¿Qué facilita la plataforma de GitLab según la diapositiva?","opciones":["La colaboración de equipos para entregar software","La administración de oficinas locales","La contratación exclusiva de desarrolladores","La sustitución de toda comunicación escrita"],"indiceCorrecta":0,"explicacion":"La diapositiva presenta GitLab como una plataforma para colaborar y entregar software."},{"id":"bienvenida-02","tema":"bienvenida","pregunta":"¿Qué actitud hacia la contribución describe la cultura de GitLab?","opciones":["Solo los managers pueden contribuir fuera de su puesto","Cada persona puede generar impacto más allá de su descripción de puesto","Las contribuciones se limitan al equipo de producto","Solo se contribuye durante la primera semana"],"indiceCorrecta":1,"explicacion":"La diapositiva indica que la cultura anima a cada persona a contribuir más allá de su descripción de puesto."},{"id":"bienvenida-03","tema":"bienvenida","pregunta":"¿Qué actividad cierra este onboarding?","opciones":["Una reunión presencial","Una evaluación anual","Un quiz para comprobar lo aprendido","Una presentación del manager"],"indiceCorrecta":2,"explicacion":"El recorrido de ocho temas termina con un quiz."},{"id":"bienvenida-04","tema":"bienvenida","pregunta":"¿Dónde se recomienda profundizar en cómo funciona la empresa?","opciones":["En un chat privado solamente","En un manual impreso","En el calendario del equipo","En el Handbook"],"indiceCorrecta":3,"explicacion":"El Handbook es la guía de cómo funciona la empresa."},{"id":"mision-vision-01","tema":"mision-vision","pregunta":"¿Cuál es la misión de GitLab para la era de la IA, según la diapositiva?","opciones":["Eliminar la necesidad de equipos de software","Ayudar a cada equipo a entregar software confiable a la velocidad de la imaginación","Crear oficinas en todas las zonas horarias","Limitar la entrega de software a proyectos de IA"],"indiceCorrecta":1,"explicacion":"La diapositiva resume la misión como ayudar a los equipos a entregar software confiable con gran rapidez."},{"id":"mision-vision-02","tema":"mision-vision","pregunta":"¿Qué fricción busca reducir GitLab?","opciones":["La distancia entre una idea y su llegada a las personas usuarias","La necesidad de aprender continuamente","La colaboración entre equipos","El uso de software confiable"],"indiceCorrecta":0,"explicacion":"La diapositiva explica que GitLab busca reducir la fricción entre una idea y su llegada a las personas usuarias."},{"id":"mision-vision-03","tema":"mision-vision","pregunta":"¿Qué busca coordinar la visión de plataforma descrita?","opciones":["Las oficinas y los calendarios","La contratación y las nóminas","El ciclo de vida del software","Las zonas horarias del equipo"],"indiceCorrecta":2,"explicacion":"La visión descrita se centra en una plataforma que coordina el ciclo de vida del software."},{"id":"mision-vision-04","tema":"mision-vision","pregunta":"¿Quiénes deberían poder trabajar juntos de forma segura según la estrategia?","opciones":["Solo las personas usuarias externas","Personas y agentes de IA","Únicamente los equipos de seguridad","Solo quienes trabajan en una oficina"],"indiceCorrecta":1,"explicacion":"La estrategia prepara la plataforma para que personas y agentes de IA trabajen juntos de forma segura."},{"id":"valores-01","tema":"valores","pregunta":"¿Qué representa el acrónimo CREDIT en GitLab?","opciones":["Cinco herramientas para reuniones","Un plan de incorporación","Seis valores de la empresa","Un programa de seguridad"],"indiceCorrecta":2,"explicacion":"CREDIT es la forma de recordar los seis valores de GitLab."},{"id":"valores-02","tema":"valores","pregunta":"¿Cuál es una conducta que refleja colaboración?","opciones":["Ayudar a otras personas y considerar sus sugerencias","Evitar pedir ayuda","Esperar hasta que el trabajo esté perfecto","Guardar toda la información para el propio equipo"],"indiceCorrecta":0,"explicacion":"La colaboración incluye ayudarse y considerar las sugerencias de otras personas."},{"id":"valores-03","tema":"valores","pregunta":"¿Qué promueve el valor de iteración?","opciones":["Esperar hasta tener un producto completamente pulido","Evitar modificar el trabajo una vez iniciado","Entregar mejoras útiles, recibir comentarios y ajustar","Reducir la transparencia para evitar cambios"],"indiceCorrecta":2,"explicacion":"Iterar significa entregar una mejora útil pronto, aprender de los comentarios y ajustar el trabajo."},{"id":"valores-04","tema":"valores","pregunta":"¿Qué permite la transparencia?","opciones":["Que la información permanezca solo en conversaciones privadas","Compartir información y contexto para que otras personas contribuyan","Eliminar la colaboración entre departamentos","Evitar documentar el trabajo"],"indiceCorrecta":1,"explicacion":"La transparencia comparte información y contexto para facilitar la contribución."},{"id":"trabajo-remoto-01","tema":"trabajo-remoto","pregunta":"¿Desde cuándo trabaja GitLab de forma remota?","opciones":["Desde sus inicios","Solo desde que se creó su plataforma","Desde que abrió su primera oficina","Únicamente durante la primera semana de onboarding"],"indiceCorrecta":0,"explicacion":"La diapositiva señala que GitLab trabaja de forma remota desde sus inicios."},{"id":"trabajo-remoto-02","tema":"trabajo-remoto","pregunta":"¿Qué facilita la comunicación asíncrona en un equipo distribuido?","opciones":["Que todas las personas trabajen en la misma oficina","Que el trabajo avance sin coincidir en línea al mismo tiempo","Que se elimine la documentación","Que cada persona trabaje sin colaborar"],"indiceCorrecta":1,"explicacion":"La comunicación asíncrona permite avanzar aunque el equipo no esté conectado a la vez."},{"id":"trabajo-remoto-03","tema":"trabajo-remoto","pregunta":"¿Qué ayuda a los equipos remotos a colaborar con claridad?","opciones":["Depender de conversaciones improvisadas","Trabajar solo durante el mismo horario","La documentación y las prácticas compartidas","Evitar compartir contexto"],"indiceCorrecta":2,"explicacion":"La documentación y las prácticas compartidas ayudan a mantener claridad en la colaboración remota."},{"id":"trabajo-remoto-04","tema":"trabajo-remoto","pregunta":"¿Qué característica describe la organización del equipo de GitLab?","opciones":["Está concentrado en un único país","Depende de oficinas para colaborar","Trabaja exclusivamente en horarios idénticos","Está distribuido por distintos países y zonas horarias"],"indiceCorrecta":3,"explicacion":"La diapositiva describe un equipo distribuido por muchos países y zonas horarias."},{"id":"comunicacion-01","tema":"comunicacion","pregunta":"¿Qué estilo de comunicación se prioriza para colaborar entre zonas horarias?","opciones":["Asíncrono","Solo llamadas en vivo","Solo mensajes privados","Comunicación sin documentación"],"indiceCorrecta":0,"explicacion":"La comunicación asíncrona permite que el trabajo avance entre distintas zonas horarias."},{"id":"comunicacion-02","tema":"comunicacion","pregunta":"¿Qué se debe hacer antes de comunicar un cambio de proceso?","opciones":["Anunciarlo solo en una reunión","Proponer actualizar primero la página pertinente del Handbook","Esperar a que cada equipo cree su propia guía","Enviar un correo sin documentación"],"indiceCorrecta":1,"explicacion":"Handbook First significa proponer primero el cambio en la página pertinente del Handbook."},{"id":"comunicacion-03","tema":"comunicacion","pregunta":"¿Por qué conviene documentar procesos y cambios en el Handbook?","opciones":["Para limitar el acceso a la información","Para reemplazar toda conversación con una reunión","Para tener una referencia compartida y actualizada","Para mantener varias copias independientes"],"indiceCorrecta":2,"explicacion":"El Handbook proporciona una referencia compartida y actualizada."},{"id":"comunicacion-04","tema":"comunicacion","pregunta":"¿Qué se recomienda hacer después de una conversación en vivo?","opciones":["Dejar las conclusiones solo en la memoria de quienes asistieron","Evitar compartirlas con el resto del equipo","Borrar cualquier nota de la reunión","Documentar las conclusiones y enlazar la información relevante"],"indiceCorrecta":3,"explicacion":"Las conclusiones deben quedar escritas y enlazar la información útil."},{"id":"onboarding-buddy-01","tema":"onboarding-buddy","pregunta":"¿Quién asigna el onboarding buddy?","opciones":["El manager","La persona recién contratada","El equipo de producto","El servicio de IT"],"indiceCorrecta":0,"explicacion":"La diapositiva indica que el manager asigna el buddy."},{"id":"onboarding-buddy-02","tema":"onboarding-buddy","pregunta":"¿Cuál es una función del buddy?","opciones":["Aprobar todas las decisiones del nuevo integrante","Orientar y ser una persona de contacto durante la incorporación","Completar el trabajo en lugar de la persona nueva","Sustituir al manager"],"indiceCorrecta":1,"explicacion":"El buddy es una persona de contacto que orienta durante el onboarding."},{"id":"onboarding-buddy-03","tema":"onboarding-buddy","pregunta":"¿Con qué puede ayudar el buddy?","opciones":["A eliminar todas las tareas de onboarding","A evitar el uso del Handbook","A revisar tareas, encontrar páginas y conectar con especialistas","A cambiar las políticas de la empresa"],"indiceCorrecta":2,"explicacion":"La diapositiva enumera esas tres formas de apoyo del buddy."},{"id":"onboarding-buddy-04","tema":"onboarding-buddy","pregunta":"¿Qué hacer si algo del onboarding no está claro?","opciones":["Esperar hasta terminar todas las tareas","No comentarlo con nadie","Buscar una respuesta fuera de los canales de GitLab","Pedir ayuda al buddy"],"indiceCorrecta":3,"explicacion":"La diapositiva aconseja pedir ayuda cuando algo no esté claro."},{"id":"seguridad-herramientas-01","tema":"seguridad-herramientas","pregunta":"¿Para qué se proporcionan principalmente los recursos administrados por GitLab?","opciones":["Para uso personal sin restricciones","Para realizar el trabajo de GitLab, con uso personal limitado sujeto a las reglas aplicables","Para compartirlos con cualquier otra persona","Para reemplazar las herramientas de trabajo aprobadas"],"indiceCorrecta":1,"explicacion":"Los recursos se proporcionan para el trabajo de GitLab; el uso personal limitado está sujeto a las condiciones aplicables."},{"id":"seguridad-herramientas-02","tema":"seguridad-herramientas","pregunta":"¿Cómo deben manejarse los datos de GitLab y de sus clientes?","opciones":["Según su clasificación","Copiándolos a cualquier servicio externo","Compartiendo todos los datos con el equipo completo","Sin considerar su nivel de sensibilidad"],"indiceCorrecta":0,"explicacion":"La política indica que los datos deben manejarse de acuerdo con su clasificación."},{"id":"seguridad-herramientas-03","tema":"seguridad-herramientas","pregunta":"¿Cuándo se pueden desactivar los controles de seguridad requeridos?","opciones":["Cuando dificulten el trabajo","Cuando lo solicite cualquier compañero","Nunca, ni siquiera mediante un proceso formal","Solo con la aprobación de seguridad correspondiente"],"indiceCorrecta":3,"explicacion":"La política prohíbe desactivar controles requeridos sin aprobación mediante el proceso correspondiente."},{"id":"seguridad-herramientas-04","tema":"seguridad-herramientas","pregunta":"¿Cuál de estas prácticas está prohibida por la política de uso aceptable?","opciones":["Solicitar aprobación para usar software nuevo","Compartir credenciales o usar extensiones no autorizadas","Usar los recursos administrados para trabajar","Manejar los datos según su clasificación"],"indiceCorrecta":1,"explicacion":"La política prohíbe compartir credenciales y restringe las integraciones de Google Workspace y extensiones de Chrome no autorizadas."},{"id":"primera-semana-01","tema":"primera-semana","pregunta":"¿Qué expectativa existe sobre el primer día en el puesto?","opciones":["Dominar todas las responsabilidades inmediatamente","Completar el onboarding en una sola llamada","No se espera dominar el puesto desde el primer día","Evitar aprender hasta la tercera semana"],"indiceCorrecta":2,"explicacion":"La diapositiva aclara que no se espera dominar el puesto desde el primer día."},{"id":"primera-semana-02","tema":"primera-semana","pregunta":"¿Dónde se siguen las tareas de onboarding?","opciones":["En un issue asignado","En una libreta personal exclusivamente","En una reunión semanal solamente","En un documento sin acceso del equipo"],"indiceCorrecta":0,"explicacion":"La diapositiva recomienda avanzar en las tareas del issue de onboarding asignado."},{"id":"primera-semana-03","tema":"primera-semana","pregunta":"¿Cuál es la fuente central recomendada para encontrar respuestas?","opciones":["Un chat de equipo privado","El Handbook","Una lista personal de notas","Una reunión presencial"],"indiceCorrecta":1,"explicacion":"El Handbook es la fuente central para conocer cómo se trabaja y encontrar respuestas."},{"id":"primera-semana-04","tema":"primera-semana","pregunta":"¿Qué se recomienda sobre la contribución al trabajo al inicio?","opciones":["No participar hasta terminar el primer mes","Contribuir mucho desde el primer día","Trabajar sin conocer al equipo","Puedes participar, sin presión por contribuir mucho al principio"],"indiceCorrecta":3,"explicacion":"La diapositiva permite participar al inicio, pero sin presión por contribuir mucho."}];
+    const VERSION = "1.0.0";
+    const FECHA = "2026-10-24";
+
+    const progressKey = `gitlab-onboarding-progress-${VERSION}`;
+    const presentation = document.querySelector("#presentation");
+    const slideContainer = document.querySelector("#slide");
+    const counter = document.querySelector("#counter");
+    const progressBar = document.querySelector("#progress");
+    const progressTrack = document.querySelector(".progress-track");
+    const previousButton = document.querySelector("#previous");
+    const nextButton = document.querySelector("#next");
+    const startQuizButton = document.querySelector("#start-quiz");
+    const quizContainer = document.querySelector("#quiz");
+    let currentSlide = 0;
+    let currentQuestions = [];
+    let currentQuestion = 0;
+    let score = 0;
+    const missedTopics = new Set();
+
+    try {
+      const savedSlide = Number(localStorage.getItem(progressKey));
+      if (Number.isInteger(savedSlide) && savedSlide >= 0 && savedSlide < slides.length) {
+        currentSlide = savedSlide;
+      }
+    } catch (error) {
+      console.warn("No se pudo recuperar el progreso guardado.", error);
+    }
+
+    function saveProgress() {
+      try {
+        localStorage.setItem(progressKey, String(currentSlide));
+      } catch (error) {
+        console.warn("No se pudo guardar el progreso.", error);
+      }
+    }
+
+    const svgNamespace = "http://www.w3.org/2000/svg";
+
+    function svgElement(name, attributes = {}, text = "") {
+      const element = document.createElementNS(svgNamespace, name);
+      for (const [key, value] of Object.entries(attributes)) element.setAttribute(key, String(value));
+      if (text) element.textContent = text;
+      return element;
+    }
+
+    function makeIllustration(id) {
+      const svg = svgElement("svg", { viewBox: "0 0 72 72", class: "illustration", "aria-hidden": "true" });
+      const stroke = { fill: "none", stroke: "currentColor", "stroke-width": 3, "stroke-linecap": "round", "stroke-linejoin": "round" };
+      const add = (name, attributes) => svg.append(svgElement(name, { ...stroke, ...attributes }));
+
+      if (id === "bienvenida") {
+        add("circle", { cx: 24, cy: 25, r: 8, fill: "#ece9ff" });
+        add("circle", { cx: 48, cy: 25, r: 8, fill: "#ece9ff" });
+        add("path", { d: "M8 58c1-12 7-18 16-18s15 6 16 18M32 58c1-12 7-18 16-18s15 6 16 18" });
+      } else if (id === "mision-vision") {
+        add("circle", { cx: 36, cy: 36, r: 26 });
+        add("circle", { cx: 36, cy: 36, r: 16, fill: "#ece9ff" });
+        add("circle", { cx: 36, cy: 36, r: 5, fill: "currentColor" });
+        add("path", { d: "M37 35 55 17M47 17h8v8" });
+      } else if (id === "valores") {
+        for (const [cx, cy] of [[20, 20], [36, 20], [52, 20], [20, 52], [36, 52], [52, 52]]) {
+          add("circle", { cx, cy, r: 6, fill: "#ece9ff" });
+        }
+        add("path", { d: "M20 26v20M36 26v20M52 26v20M26 20h4M42 20h4M26 52h4M42 52h4" });
+      } else if (id === "trabajo-remoto") {
+        add("circle", { cx: 36, cy: 36, r: 27 });
+        add("ellipse", { cx: 36, cy: 36, rx: 12, ry: 27 });
+        add("path", { d: "M11 27h50M11 45h50M36 9v54" });
+      } else if (id === "comunicacion") {
+        add("path", { d: "M18 9h26l11 11v43H18z", fill: "#fff" });
+        add("path", { d: "M44 9v13h11M26 33h20M26 42h20M26 51h12" });
+      } else if (id === "onboarding-buddy") {
+        add("circle", { cx: 24, cy: 25, r: 8, fill: "#ece9ff" });
+        add("circle", { cx: 49, cy: 25, r: 8, fill: "#ece9ff" });
+        add("path", { d: "M8 59c1-12 6-18 16-18 7 0 12 4 15 12M64 59c-1-12-6-18-15-18-4 0-7 1-10 4M30 32l7 6 7-6" });
+      } else if (id === "seguridad-herramientas") {
+        add("path", { d: "M36 7 59 16v16c0 15-9 25-23 33C22 57 13 47 13 32V16z", fill: "#ece9ff" });
+        add("path", { d: "m25 36 8 8 15-17" });
+      } else {
+        add("rect", { x: 13, y: 12, width: 46, height: 48, rx: 6, fill: "#fff" });
+        add("path", { d: "M13 26h46M24 7v10M48 7v10M23 37h7M39 37h10M23 48h7M39 48h10" });
+      }
+      return svg;
+    }
+
+    function renderDiagram(slide) {
+      const { visual } = slide;
+      const figure = document.createElement("figure");
+      figure.className = `diagram diagram-${visual.tipo}`;
+      const heading = document.createElement("div");
+      heading.className = "diagram-heading";
+      heading.append(makeIllustration(slide.id));
+      const title = document.createElement("h2");
+      title.textContent = visual.titulo;
+      heading.append(title);
+
+      if (visual.tipo === "red") {
+        const hub = document.createElement("div");
+        hub.className = "diagram-hub";
+        hub.textContent = "Equipo distribuido";
+        figure.append(heading, hub);
+      } else figure.append(heading);
+
+      const items = document.createElement("ol");
+      items.className = `diagram-items diagram-items-${visual.tipo}`;
+      items.setAttribute("aria-label", visual.titulo);
+      visual.elementos.forEach((label, index) => {
+        const item = document.createElement("li");
+        const number = document.createElement("span");
+        number.className = "diagram-number";
+        number.setAttribute("aria-hidden", "true");
+        number.textContent = String(index + 1);
+        const text = document.createElement("span");
+        text.className = "diagram-label";
+        text.textContent = label;
+        item.append(number, text);
+        items.append(item);
+      });
+
+      figure.append(items);
+      const caption = document.createElement("figcaption");
+      caption.textContent = visual.tipo === "cuadricula"
+        ? "Mapa visual: cada bloque resume una idea clave; consulta las viñetas para ampliarla."
+        : visual.tipo === "red"
+          ? "Mapa de conexiones: el nodo central representa al equipo y los demás muestran cómo se mantiene conectado."
+          : visual.tipo === "ciclo"
+            ? "Ciclo de trabajo: sigue los pasos conectados y vuelve a aprender y mejorar."
+            : visual.tipo === "cronologia"
+              ? "Línea de tiempo: la incorporación avanza por etapas, sin esperar que lo aprendas todo el primer día."
+              : "Recorrido visual: avanza por las etapas y consulta las viñetas para ampliar cada idea.";
+      figure.append(caption);
+      return figure;
+    }
+
+    function renderSlide() {
+      const slide = slides[currentSlide];
+      counter.textContent = `Diapositiva ${currentSlide + 1} de ${slides.length}`;
+      progressBar.style.width = `${((currentSlide + 1) / slides.length) * 100}%`;
+      progressTrack.setAttribute("aria-valuemax", String(slides.length));
+      progressTrack.setAttribute("aria-valuenow", String(currentSlide + 1));
+      slideContainer.replaceChildren();
+
+      const title = document.createElement("h1");
+      title.textContent = slide.titulo;
+      const list = document.createElement("ul");
+      list.className = "slide-points";
+      for (const point of slide.puntos) {
+        const item = document.createElement("li");
+        item.textContent = point;
+        list.append(item);
+      }
+      const source = document.createElement("a");
+      source.className = "source";
+      source.href = slide.url;
+      source.target = "_blank";
+      source.rel = "noopener noreferrer";
+      source.textContent = "Consultar la página oficial del Handbook";
+      slideContainer.append(title, list, renderDiagram(slide), source);
+
+      previousButton.disabled = currentSlide === 0;
+      nextButton.hidden = currentSlide === slides.length - 1;
+      startQuizButton.hidden = currentSlide !== slides.length - 1;
+      saveProgress();
+    }
+
+    function shuffle(items) {
+      const shuffled = [...items];
+      for (let i = shuffled.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    }
+
+    function startQuiz() {
+      currentQuestions = shuffle(quizBank).slice(0, 10);
+      currentQuestion = 0;
+      score = 0;
+      missedTopics.clear();
+      presentation.hidden = true;
+      quizContainer.hidden = false;
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const question = currentQuestions[currentQuestion];
+      quizContainer.replaceChildren();
+
+      const progress = document.createElement("p");
+      progress.className = "eyebrow";
+      progress.textContent = `Pregunta ${currentQuestion + 1} de ${currentQuestions.length}`;
+      const title = document.createElement("h1");
+      title.textContent = question.pregunta;
+      const answers = document.createElement("div");
+      answers.className = "answers";
+      answers.setAttribute("role", "group");
+      answers.setAttribute("aria-label", "Opciones de respuesta");
+      const feedback = document.createElement("div");
+      feedback.className = "feedback";
+      feedback.hidden = true;
+      feedback.setAttribute("role", "status");
+      const controls = document.createElement("div");
+      controls.className = "controls";
+      const next = document.createElement("button");
+      next.type = "button";
+      next.textContent = currentQuestion === currentQuestions.length - 1 ? "Ver resultado" : "Siguiente pregunta";
+      next.hidden = true;
+      next.addEventListener("click", () => {
+        currentQuestion += 1;
+        if (currentQuestion < currentQuestions.length) renderQuestion();
+        else renderResult();
+      });
+
+      const shuffledOptions = shuffle(question.opciones.map((text, index) => ({
+        text,
+        correct: index === question.indiceCorrecta
+      })));
+      for (const option of shuffledOptions) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = option.text;
+        button.addEventListener("click", () => {
+          for (const answer of answers.querySelectorAll("button")) answer.disabled = true;
+          if (option.correct) {
+            score += 1;
+            button.classList.add("correct");
+            feedback.classList.add("good");
+            feedback.textContent = `Correcto. ${question.explicacion}`;
+          } else {
+            missedTopics.add(question.tema);
+            button.classList.add("incorrect");
+            feedback.classList.add("bad");
+            const correctAnswer = shuffledOptions.find((answer) => answer.correct).text;
+            feedback.textContent = `Incorrecto. La respuesta correcta es: ${correctAnswer}. ${question.explicacion}`;
+            for (const answer of answers.querySelectorAll("button")) {
+              if (answer.textContent === correctAnswer) answer.classList.add("correct");
+            }
+          }
+          feedback.hidden = false;
+          next.hidden = false;
+          next.focus();
+        });
+        answers.append(button);
+      }
+
+      controls.append(next);
+      quizContainer.append(progress, title, answers, feedback, controls);
+    }
+
+    function renderResult() {
+      quizContainer.replaceChildren();
+      const title = document.createElement("h1");
+      title.textContent = "Resultado del quiz";
+      const summary = document.createElement("p");
+      summary.className = "result";
+      const passed = score >= 8;
+      summary.textContent = `Obtuviste ${score} de 10 (${score * 10} %). ${passed ? "¡Aprobaste!" : "No aprobaste esta vez."}`;
+      quizContainer.append(title, summary);
+
+      if (!passed) {
+        const review = document.createElement("p");
+        review.className = "result";
+        review.textContent = "Temas para repasar: ";
+        const topics = [...missedTopics].map((id) => slides.find((slide) => slide.id === id)?.titulo).filter(Boolean);
+        review.append(document.createTextNode(topics.length ? topics.join(", ") : "repasa las diapositivas y vuelve a intentarlo"));
+        quizContainer.append(review);
+      }
+
+      const controls = document.createElement("div");
+      controls.className = "controls";
+      const retry = document.createElement("button");
+      retry.type = "button";
+      retry.textContent = "Reintentar quiz";
+      retry.addEventListener("click", startQuiz);
+      const back = document.createElement("button");
+      back.type = "button";
+      back.className = "secondary";
+      back.textContent = "Volver a las diapositivas";
+      back.addEventListener("click", () => {
+        quizContainer.hidden = true;
+        presentation.hidden = false;
+        renderSlide();
+      });
+      controls.append(back, retry);
+      quizContainer.append(controls);
+    }
+
+    previousButton.addEventListener("click", () => {
+      if (currentSlide > 0) {
+        currentSlide -= 1;
+        renderSlide();
+      }
+    });
+    nextButton.addEventListener("click", () => {
+      if (currentSlide < slides.length - 1) {
+        currentSlide += 1;
+        renderSlide();
+      }
+    });
+    startQuizButton.addEventListener("click", startQuiz);
+    document.addEventListener("keydown", (event) => {
+      if (presentation.hidden || event.altKey || event.ctrlKey || event.metaKey) return;
+      if (event.key === "ArrowLeft" && currentSlide > 0) {
+        event.preventDefault();
+        currentSlide -= 1;
+        renderSlide();
+      } else if (event.key === "ArrowRight" && currentSlide < slides.length - 1) {
+        event.preventDefault();
+        currentSlide += 1;
+        renderSlide();
+      }
+    });
+
+    document.querySelector("#version").textContent = VERSION;
+    const generated = document.querySelector("#generation-date");
+    generated.dateTime = FECHA;
+    generated.textContent = FECHA;
+    const sourcesList = document.querySelector("#sources");
+    for (const slide of slides) {
+      const item = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = slide.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = slide.titulo;
+      item.append(link);
+      sourcesList.append(item);
+    }
+    renderSlide();
+  </script>
+</body>
+</html>
