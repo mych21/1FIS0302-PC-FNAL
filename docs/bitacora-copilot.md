@@ -55,3 +55,19 @@ Registro cronológico de las solicitudes y del trabajo realizado para este proye
 
 - El usuario solicitó registrar las interacciones de este trabajo en `docs/bitacora-copilot.md`.
 - Este archivo se creó para conservar el historial de solicitudes, cambios, verificaciones y estado de revisión descritos arriba.
+
+## Solicitud posterior: automatización de actualización de fuentes
+
+- Se solicitó crear `agente/actualizar.js` para descargar el texto principal de cada página de `agente/fuentes.json`, calcular hashes SHA-256, actualizar solo los temas cuya fuente cambió y generar una nueva versión menor mediante `agente/construir.js`.
+- Se pidió una opción `--inicializar` que guarde los hashes actuales sin crear una versión, además de un workflow manual que abra un pull request o un issue si falla la validación.
+- Durante la investigación se confirmó que el endpoint de GitHub Models solicitado ya no es una opción operativa. Se prepararon provisionalmente un actualizador y un workflow que dependían de ese servicio, pero se retiraron para no dejar una integración rota.
+- Después se solicitó cambiar el enfoque a un agente personalizado de Copilot que trabaje a partir de un issue con los temas cambiados, limite las fuentes a `agente/fuentes.json`, actualice solo los temas afectados y abra un pull request únicamente tras validar la nueva versión.
+- Se creó `.github/agents/actualizador-onboarding.agent.md` con esas reglas, la comparación de hashes, la actualización de los datos y la revisión humana obligatoria mediante pull request. Si no cambia ningún hash, el agente debe detenerse sin crear una versión.
+- Se actualizó `agente/construir.js` para aceptar una versión y los temas modificados desde variables de entorno, validar hashes SHA-256 para temas actualizados y rechazar versiones o listas de temas mal formadas.
+- Se reemplazó la documentación provisional de GitHub Models y del workflow en `README.md` por el procedimiento del agente personalizado. No se conserva un workflow programado ni se usa un servicio externo de generación.
+
+### Detector manual de cambios en las fuentes
+
+- Se solicitó implementar `agente/actualizar.js` sin dependencias ni APIs de IA para extraer el texto principal de cada fuente, comparar hashes SHA-256, guardar hashes iniciales con `--inicializar` y generar un archivo de salida con los temas modificados.
+- Se añadió `.github/workflows/agente-onboarding.yml`, ejecutable solo mediante `workflow_dispatch`, con permisos `contents: write` e `issues: write`; crea un issue con los temas y URLs detectados, y guarda los nuevos hashes.
+- Se actualizó la guía del agente para recibir del issue los temas afectados, y el README para documentar el workflow y el comando de inicialización.
