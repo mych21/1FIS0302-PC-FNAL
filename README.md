@@ -67,7 +67,7 @@ El generador valida los datos y crea el HTML autocontenido de la versión config
 
 La actualización la realiza el agente personalizado de Copilot en la app de escritorio, siguiendo este README y usando únicamente las URL autorizadas en `agente/fuentes.json`. El agente en la nube está desactivado por el administrador de la cuenta institucional; por eso el trabajo se ejecuta localmente en la app de escritorio.
 
-Al ejecutarlo, el agente corre `node agente/actualizar.js`. El detector compara los hashes SHA-256 de las páginas fuente y genera un reporte local con los temas modificados, sus URL y los hashes nuevos. Si no encuentra cambios, el agente lo informa y termina sin modificar archivos. Si encuentra cambios, actualiza únicamente esos temas y sus hashes, valida y genera la nueva versión, crea una rama, hace commit y abre un pull request titulado `Onboarding vX.Y.Z` para revisión humana.
+Al escribir **Actualizar onboarding**, el agente corre `node agente/actualizar.js --forzar todos`: consulta las fuentes y genera una versión nueva aunque no hayan cambiado los hashes. Actualiza los ocho temas con la información vigente de sus URL y guarda sus hashes; luego valida y genera la versión, crea una rama, hace commit y abre un pull request titulado `Onboarding vX.Y.Z` para revisión humana. En una ejecución normal del detector sin forzar, si no encuentra cambios, no se genera una versión.
 
 El workflow de GitHub Actions queda como detector opcional y solo se ejecuta a demanda. Si se inicia manualmente desde **Actions**, revisa las fuentes y abre un issue con los temas y hashes detectados; no modifica ni hace commit de archivos del repositorio.
 
@@ -78,7 +78,7 @@ Para inicializar los hashes manualmente, ejecuta `node agente/actualizar.js --in
 1. Abre el repositorio en la app de escritorio de GitHub Copilot.
 2. Inicia una sesión nueva y elige el agente **actualizador-onboarding**.
 3. Escribe **Actualizar onboarding**.
-4. Si hubo cambios, revisa el pull request **Onboarding vX.Y.Z** y fusiónalo; GitHub Pages publicará la versión nueva. Si no hubo cambios, el agente lo informa y no crea una versión.
+4. Revisa el pull request **Onboarding vX.Y.Z** y fusiónalo; GitHub Pages publicará la versión nueva. La solicitud **Actualizar onboarding** siempre genera una versión nueva, incluso si las fuentes no cambiaron.
 
 Para actualizar intencionalmente temas aunque sus fuentes no hayan cambiado, solicita **Forzar actualización de [tema]**. El agente ejecutará `node agente/actualizar.js --forzar valores`; para varios temas puede usar IDs separados por comas (por ejemplo, `--forzar valores,comunicacion`) o `--forzar todos`.
 
@@ -149,7 +149,7 @@ Cada diapositiva incluirá:
 
 - Usar exclusivamente las páginas enumeradas en `agente/fuentes.json`.
 - Actualizar únicamente los temas cuyas páginas de fuente hayan cambiado.
-- Si ninguna página cambió, no crear una versión nueva.
+- Si ninguna página cambió, no crear una versión nueva, excepto cuando el usuario solicite explícitamente **Actualizar onboarding**, que fuerza la actualización de los ocho temas y genera una versión.
 - No agregar enlaces que no estén en `agente/fuentes.json`.
 - No publicar una versión si no cumple todos los requisitos del quiz descritos en este README.
 - Proponer cada versión nueva mediante un pull request que deberá revisar una persona antes de publicarse.
