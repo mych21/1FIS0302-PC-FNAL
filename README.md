@@ -18,20 +18,24 @@ Empleados nuevos de GitLab que necesitan conocer los aspectos esenciales de la e
 - Enlaces a las páginas oficiales del GitLab Handbook usadas como fuente.
 - Quiz aleatorio de diez preguntas con retroalimentación inmediata.
 - Resultado de aprobación, temas por repasar y opción de reintento.
+- Agente que detecta cambios en las páginas del Handbook y propone una versión nueva mediante un pull request.
+- Historial de versiones con fecha y temas cambiados.
 
 ## Cómo usarlo
 
 Abre [el onboarding de GitLab](https://mych21.github.io/1FIS0302-PC-FNAL/).
 
+Avanza por las 8 diapositivas y, al final, responde el quiz de 10 preguntas; necesitas 8 correctas para aprobar. Si no apruebas, verás qué temas repasar y podrás reintentar.
+
 ## Cómo ejecutarlo localmente
 
-Con Node.js instalado, ejecuta desde la raíz del repositorio:
+Requisito: Node.js **v26.12.1** (versión instalada en este equipo; compruébala con `node --version`). Desde la raíz del repositorio, ejecuta:
 
 ```sh
 node agente/construir.js
 ```
 
-El generador valida los datos y crea el HTML autocontenido de la versión configurada en `versiones/`, además de actualizar el historial y `index.html`.
+El generador valida los datos y crea el HTML autocontenido de la versión configurada en `versiones/`, además de actualizar el historial y `index.html`. Abre directamente en el navegador el archivo generado `versiones/vX.Y.Z/onboarding.html`.
 
 ## Estructura del proyecto
 
@@ -69,10 +73,24 @@ El workflow de GitHub Actions queda como detector opcional y solo se ejecuta a d
 
 Para inicializar los hashes manualmente, ejecuta `node agente/actualizar.js --inicializar`. Esta opción solo guarda los hashes actuales y no genera una versión.
 
+## Cómo ejecutar el agente
+
+1. Abre el repositorio en la app de escritorio de GitHub Copilot.
+2. Inicia una sesión nueva y elige el agente **actualizador-onboarding**.
+3. Escribe **Actualizar onboarding**.
+4. Si hubo cambios, revisa el pull request **Onboarding vX.Y.Z** y fusiónalo; GitHub Pages publicará la versión nueva. Si no hubo cambios, el agente lo informa y no crea una versión.
+
 ## Uso de GitHub Copilot
 
 | Tarea | Qué pedí | Qué sugirió | Mi decisión y por qué |
 |---|---|---|---|
+| Especificación | Definir temas, formato y reglas del quiz antes de programar | Creó `ESPECIFICACION.md` | La amplié con presentación, versiones y reglas del agente, y luego la uní al README para tener un solo documento de referencia. |
+| Contenido | Encontrar las páginas oficiales del Handbook para los 8 temas | Revisó más de 40 páginas y eligió 8 fuentes | Revisé los enlaces antes de aceptarlos. |
+| Diseño | Más información, dibujos y diagramas | Amplió las diapositivas sin pasar de 4 viñetas y generó la v1.1.0 | Acepté, porque respetaba la especificación y conservaba la v1.0.0 en el historial. |
+| Agente con IA | Usar GitHub Models para reescribir el contenido | Avisó que GitHub Models se retiró el 30/07/2026 y preguntó qué proveedor usar | No usé proveedores externos, para evitar claves y costos. |
+| Detector | Workflow que avise cuando cambien las fuentes | El workflow guardaba los hashes nuevos al detectar cambios | Lo cambié para que solo abra un issue; si no, un cambio podía perderse sin aviso. |
+| Ejecución | Usar el agente en la nube de GitHub | La pestaña Agents mostró que está desactivado por el administrador | Ejecuto el agente en la app de escritorio, donde sí funciona con mi cuenta. |
+| Frecuencia | Que el agente corra a demanda | El primer diseño corría cada lunes | Lo dejé solo a demanda para controlar cuándo se actualiza. |
 
 El registro de las interacciones está en [`docs/bitacora-copilot.md`](docs/bitacora-copilot.md).
 
