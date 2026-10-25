@@ -1,0 +1,70 @@
+name: Detectar cambios en fuentes del onboarding
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  detectar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el repositorio
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Comparar hashes de las páginas del Handbook
+        id: detector
+        env:
+          ONBOARDING_OUTPUT_FILE: ${{ runner.temp }}/temas-afectados.json
+        run: node agente/actualizar.js
+
+      - name: Crear issue con los temas afectados
+        if: steps.detector.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CHANGES_FILE: ${{ steps.detector.outputs.changes_file }}
+          ISSUE_BODY_FILE: ${{ runner.temp }}/issue-body.md
+        run: |
+          node <<'NODE'
+          const fs = require("node:fs");
+          const topics = JSON.parse(fs.readFileSync(process.env.CHANGES_FILE, "utf8"));
+          const lines = [
+            "El workflow detectó cambios en las siguientes páginas autorizadas del GitLab Handbook.",
+            "",
+            "Actualiza únicamente estos temas siguiendo `README.md` y las instrucciones del agente de onboarding.",
+            "",
+            ...topics.flatMap((topic) => [
+              `- **${topic.titulo}** (id: \`${topic.id}\`): ${topic.url}`
+            ]),
+            "",
+            "Después de actualizar el contenido, valida el onboarding con `node agente/construir.js` y propón los cambios mediante un pull request para revisión humana."
+          ];
+          fs.writeFileSync(process.env.ISSUE_BODY_FILE, `${lines.join("\n")}\n`);
+          NODE
+          gh issue create \
+            --title "Actualizar temas del onboarding por cambios en el Handbook" \
+            --body-file "$ISSUE_BODY_FILE"
+
+      - name: Guardar los hashes detectados
+        if: steps.detector.outputs.changed == 'true'
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add agente/fuentes.json
+          if git diff --cached --quiet; then
+            echo "No hay hashes nuevos para guardar."
+            exit 0
+          fi
+          git commit -m "chore: guardar hashes de fuentes del onboarding"
+          git push origin "HEAD:${DEFAULT_BRANCH}"

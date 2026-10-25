@@ -8,7 +8,7 @@ const sourceFile = path.join(__dirname, "fuentes.json");
 const slidesFile = path.join(root, "datos", "slides.json");
 const quizFile = path.join(root, "datos", "quiz.json");
 const templateFile = path.join(__dirname, "plantilla.html");
-const version = "1.1.0";
+const version = process.env.ONBOARDING_VERSION || "1.1.0";
 const now = new Date();
 const generatedDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
 
@@ -36,7 +36,7 @@ function validate(sources, slides, quiz) {
     sourceIds.add(source.id);
     requireValue(typeof source.titulo === "string" && source.titulo.trim(), `Falta título para la fuente ${source.id}.`);
     requireValue(typeof source.url === "string" && source.url.startsWith("https://handbook.gitlab.com/handbook/"), `URL oficial no válida para ${source.id}.`);
-    requireValue(source.hash === "", `El hash de ${source.id} debe quedar vacío.`);
+    requireValue(source.hash === "" || /^[a-f0-9]{64}$/.test(source.hash), `El hash de ${source.id} debe estar vacío o ser un SHA-256 hexadecimal.`);
   }
 
   const slidesById = new Map();
@@ -100,6 +100,7 @@ function buildIndex(relativeUrl) {
 }
 
 function main() {
+  requireValue(/^\d+\.\d+\.\d+$/.test(version), "ONBOARDING_VERSION debe usar el formato semántico X.Y.Z.");
   const sources = readJson(sourceFile);
   const slides = readJson(slidesFile);
   const quiz = readJson(quizFile);
@@ -117,10 +118,30 @@ function main() {
   const indexFile = path.join(root, "index.html");
   const history = fs.existsSync(historyFile) ? readJson(historyFile) : { versiones: [] };
   requireValue(Array.isArray(history.versiones), "versiones/historial.json debe incluir una lista de versiones.");
+  let changedTopics = sources.map((source) => source.id);
+  if (process.env.ONBOARDING_CHANGED_TOPICS) {
+    try {
+      changedTopics = JSON.parse(process.env.ONBOARDING_CHANGED_TOPICS);
+    } catch (error) {
+      throw new Error(`ONBOARDING_CHANGED_TOPICS debe ser un arreglo JSON: ${error.message}`);
+    }
+    const sourceIds = new Set(sources.map((source) => source.id));
+    requireValue(
+      Array.isArray(changedTopics) &&
+        changedTopics.length > 0 &&
+        new Set(changedTopics).size === changedTopics.length &&
+        changedTopics.every((id) => sourceIds.has(id)),
+      "ONBOARDING_CHANGED_TOPICS debe ser un arreglo no vacío de temas válidos y sin duplicados."
+    );
+    for (const id of changedTopics) {
+      const source = sources.find((entry) => entry.id === id);
+      requireValue(/^[a-f0-9]{64}$/.test(source.hash), `El tema ${id} necesita un hash SHA-256 antes de generar una actualización.`);
+    }
+  }
   const currentEntry = {
     version,
     fecha: generatedDate,
-    temasCambiados: sources.map((source) => source.id)
+    temasCambiados: changedTopics
   };
   const existingVersion = history.versiones.findIndex((entry) => entry.version === version);
   if (existingVersion === -1) history.versiones.push(currentEntry);

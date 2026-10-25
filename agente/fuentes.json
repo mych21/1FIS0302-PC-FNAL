@@ -3,48 +3,48 @@
     "id": "bienvenida",
     "titulo": "Bienvenida: GitLab y este onboarding",
     "url": "https://handbook.gitlab.com/handbook/company/culture/",
-    "hash": ""
+    "hash": "a302fd28ad362dc41097197fb7fbe058d937d35d75d6c14811388568f1223ec7"
   },
   {
     "id": "mision-vision",
     "titulo": "Misión y visión",
     "url": "https://handbook.gitlab.com/handbook/company/mission/",
-    "hash": ""
+    "hash": "191833d57d1520e3c3ffabded9c48e4f2a126588ffe92f95e7f74a145edca2ee"
   },
   {
     "id": "valores",
     "titulo": "Valores de la empresa",
     "url": "https://handbook.gitlab.com/handbook/values/",
-    "hash": ""
+    "hash": "6e72157fdd7c8b2a3b1f1ae076a1de9a84b9624b7c337c176493e4fadc7ef8c6"
   },
   {
     "id": "trabajo-remoto",
     "titulo": "Trabajo 100 % remoto",
     "url": "https://handbook.gitlab.com/handbook/company/culture/all-remote/",
-    "hash": ""
+    "hash": "d9cfa401b55e6fffeb72e730220a0448e4c29eb6e716503665fff9433cb0710d"
   },
   {
     "id": "comunicacion",
     "titulo": "Comunicación asíncrona y Handbook First",
     "url": "https://handbook.gitlab.com/handbook/company/culture/all-remote/handbook-first/",
-    "hash": ""
+    "hash": "8049f5066b0af07c8564650acfef89746570494cd7bdfe1c0fe16837937205a3"
   },
   {
     "id": "onboarding-buddy",
     "titulo": "Proceso de onboarding y buddy",
     "url": "https://handbook.gitlab.com/handbook/people-group/general-onboarding/onboarding-buddies/",
-    "hash": ""
+    "hash": "09c9e68503a916178b17b91919074682d36f34e780c2338d699eedb6bb048df1"
   },
   {
     "id": "seguridad-herramientas",
     "titulo": "Seguridad y uso aceptable de herramientas",
     "url": "https://handbook.gitlab.com/handbook/people-group/acceptable-use-policy/",
-    "hash": ""
+    "hash": "4201f368ffff6a03ef67dbf693a91fb21e275b182156c768cb48f939c7b6331b"
   },
   {
     "id": "primera-semana",
     "titulo": "Tu primera semana",
     "url": "https://handbook.gitlab.com/handbook/company/culture/all-remote/onboarding/",
-    "hash": ""
+    "hash": "4a7e918e848c8ebe6ee8a170f79fd6f7366d297922bcd9ac4714cce90c783d51"
   }
 ]
